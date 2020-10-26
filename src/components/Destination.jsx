@@ -17,7 +17,7 @@ class DestinationParent extends React.Component {
         destinationTitle: data.title,
         destinationDescription: data.description,
         destinationId: data._id,
-        buttonTitle: "View " + data.title,
+        buttonTitle: "Explore " + data.title,
         island: data.island,
         open_weather_id: data.open_weather_location_id
       });
@@ -29,7 +29,9 @@ class DestinationParent extends React.Component {
   render() {
     return (
       <div className="destination-bio">
-        <h1 className="map-title">{this.state.destinationTitle}</h1>
+        <h1 className="map-title">
+          {this.state.destinationTitle.toUpperCase()}
+        </h1>
         <p>{this.state.destinationDescription}</p>
         <Link to={`/destinations/${this.state.destinationId}/info`}>
           <h5>{this.state.buttonTitle}</h5>
@@ -38,6 +40,9 @@ class DestinationParent extends React.Component {
           <strong>{this.state.island}</strong>
         </h6>
         <div className="map-buttons">
+          <div className="map-img">
+            <img src="/images/japan_islands.svg" alt="map of japan" />
+          </div>
           <DestinationChild
             destination="Hakuba Valley"
             destinationId="5f4f0c4d6dc6a63a00dfd95a"
