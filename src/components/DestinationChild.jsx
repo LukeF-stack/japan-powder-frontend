@@ -7,8 +7,8 @@ function DestinationChild(props) {
     displayInfo(destinationId);
   };
   return (
-    <div className="map-point">
-      <div onClick={displayInfoParams}></div>
+    <div>
+      <button onClick={displayInfoParams} className="map-point"></button>
     </div>
   );
 }
