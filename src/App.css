@@ -1,7 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500&family=Mulish:wght@200;300;400;500;600;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Mulish", sans-serif;
 }
 
 section {
@@ -144,7 +161,8 @@ ul {
   height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 60px auto 2fr;
+  grid-template-columns: 23% 1fr 23%;
 }
 
 .hero-overlay {
@@ -154,17 +172,31 @@ ul {
   width: 100%;
   z-index: 3;
   background-position: center;
+  grid-column: span 3;
 }
 
 .homePage-hero-title {
   margin: 0;
   color: black;
-  margin-top: 5vh;
+  margin-top: 7vh;
   grid-row: 2;
-  font-size: 12vw;
+  grid-column: 2;
+  font-size: 11vw;
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
   text-shadow: 7px 7px 10px rgba(0, 0, 0, 0.34);
+  display: inline-block;
+}
+
+.homePage-hero-subtitle {
+  margin: 0 0 0 20%;
+  color: #940000;
+  grid-row: 3;
+  grid-column: 2;
+  font-size: 1.5vw;
+  font-weight: 600;
+  text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.192);
+  display: inline-block;
 }
 
 .homePage-map {
