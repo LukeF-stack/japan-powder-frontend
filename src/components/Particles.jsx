@@ -23,6 +23,12 @@ function ParticlesBox() {
               direction: "bottom",
               out_mode: "out",
               speed: 0.5
+            },
+            opacity: {
+              anim: {
+                enable: false,
+                opacity_min: 0.5
+              }
             }
           }
         }}

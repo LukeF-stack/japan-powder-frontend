@@ -85,9 +85,9 @@ nav {
   position: fixed;
   width: 100%;
   height: 60px;
-  justify-content: space-around;
-  display: flexbox;
-  background-color: rgb(37, 37, 37);
+  justify-content: flex-end;
+  display: flex;
+  /* background-color: rgb(37, 37, 37); */
   top: 0;
   z-index: 10;
 }
@@ -96,14 +96,30 @@ nav ul {
   line-height: 60px;
 }
 
+#logo {
+  margin: auto;
+  margin-left: 5vw;
+  width: 160px;
+  transition: all ease 0.3s;
+}
+
+#logo:hover {
+  transform: scale(1.1);
+}
+
+#logo a {
+  display: flex;
+}
+
 .nav-links {
   display: flex;
   justify-content: space-around;
   padding: 0;
+  width: 45vw;
 }
 
 .nav-links li {
-  color: white;
+  color: rgb(34, 34, 34);
   transition: all ease 0.3s;
 }
 

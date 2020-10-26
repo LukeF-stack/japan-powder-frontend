@@ -8,6 +8,11 @@ function Nav() {
   const { user } = useContext(UserContext);
   return (
     <nav>
+      <div id="logo">
+        <Link to="/">
+          <img src="images/powder_logo.svg" alt="Powder Japan Logo" />
+        </Link>
+      </div>
       <ul className="nav-links">
         <Link to="/">
           <li>Home</li>
