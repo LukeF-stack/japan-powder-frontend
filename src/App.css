@@ -92,9 +92,61 @@ section {
 }
 
 .map-title {
-  margin: 80px 0 40px;
+  height: fit-content;
+
+  margin: auto;
+
+  grid-row: 2;
 }
 .destination-bio {
+  margin: auto;
+}
+
+.destination-bio p {
+  grid-column: 1;
+
+  width: 50%;
+
+  margin: auto;
+
+  grid-row: 3;
+}
+
+.destination-bio a {
+  grid-column: 1;
+
+  width: 50%;
+
+  height: fit-content;
+
+  margin: auto;
+
+  grid-row: 4;
+}
+
+.island-description {
+  grid-row: 6;
+
+  height: fit-content;
+
+  margin: auto;
+
+  margin-bottom: 20px;
+
+  margin-right: 20px;
+
+  grid-column: 2;
+}
+
+.map-buttons {
+  grid-column: 2;
+
+  grid-row: span 5;
+
+  height: fit-content;
+
+  width: fit-content;
+
   margin: auto;
 }
 
@@ -166,7 +218,7 @@ ul {
 }
 
 .hero-overlay {
-  background-image: url("./images/hero_test_front_3.png");
+  background-image: url("./images/hero_test_front_4.png");
   background-size: cover;
   height: 100vh;
   width: 100%;
@@ -178,7 +230,7 @@ ul {
 .homePage-hero-title {
   margin: 0;
   color: black;
-  margin-top: 7vh;
+  margin-top: 9vh;
   grid-row: 2;
   grid-column: 2;
   font-size: 11vw;
@@ -202,11 +254,12 @@ ul {
 .homePage-map {
   height: 100vh;
   width: 100%;
-  display: grid;
-  grid-template-rows: 200px 1fr;
+  /* display: grid;
+  grid-template-rows: 200px 1fr; */
 }
 .homePage-map ul {
   z-index: 1;
+  padding: 0;
 }
 
 .page-title {
@@ -244,9 +297,13 @@ ul {
 }
 
 .destination-bio {
-  width: 70%;
-  margin: auto;
-  max-width: 600px;
+  height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  grid-template-rows: 20% 10% 30% 10% 1fr;
 }
 
 .resort-result {

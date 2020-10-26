@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 class DestinationParent extends React.Component {
   state = {
-    destinationTitle: "Select a destination"
+    destinationTitle: "SELECT A DESTINATION"
   };
   getInfo = async (value) => {
     try {
@@ -34,30 +34,32 @@ class DestinationParent extends React.Component {
         <Link to={`/destinations/${this.state.destinationId}/info`}>
           <h5>{this.state.buttonTitle}</h5>
         </Link>
-        <h6>
+        <h6 className="island-description">
           <strong>{this.state.island}</strong>
         </h6>
-        <DestinationChild
-          destination="Hakuba Valley"
-          destinationId="5f4f0c4d6dc6a63a00dfd95a"
-          displayInfo={this.getInfo}
-          open_weather_id={this.state.open_weather_id}
-        />
-        <DestinationChild
-          destination="Niseko"
-          destinationId="5f51ee44a99a94584080dc10"
-          displayInfo={this.getInfo}
-        />
-        <DestinationChild
-          destination="Shiga Kogen"
-          destinationId="5f576091a066892294ead2de"
-          displayInfo={this.getInfo}
-        />
-        <DestinationChild
-          destination="Rusutsu"
-          destinationId="5f5761d6a066892294ead2df"
-          displayInfo={this.getInfo}
-        />
+        <div className="map-buttons">
+          <DestinationChild
+            destination="Hakuba Valley"
+            destinationId="5f4f0c4d6dc6a63a00dfd95a"
+            displayInfo={this.getInfo}
+            open_weather_id={this.state.open_weather_id}
+          />
+          <DestinationChild
+            destination="Niseko"
+            destinationId="5f51ee44a99a94584080dc10"
+            displayInfo={this.getInfo}
+          />
+          <DestinationChild
+            destination="Shiga Kogen"
+            destinationId="5f576091a066892294ead2de"
+            displayInfo={this.getInfo}
+          />
+          <DestinationChild
+            destination="Rusutsu"
+            destinationId="5f5761d6a066892294ead2df"
+            displayInfo={this.getInfo}
+          />
+        </div>
       </div>
     );
   }
