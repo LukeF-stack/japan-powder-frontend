@@ -121,6 +121,22 @@ section {
   grid-row: 4;
 }
 
+#rusutsu {
+  top: 10ch;
+  left: calc(10vw + 100px);
+}
+#niseko {
+  top: 8ch;
+  left: calc(10vw + 120px);
+}
+#shiga_kogeb {
+  top: 37ch;
+  left: calc(10vw + 30px);
+}
+#hakuba_valley {
+  top: 40ch;
+}
+
 .island-description {
   grid-row: 6;
   height: 40px;
@@ -141,7 +157,7 @@ section {
   position: absolute;
   width: 35px;
   height: 35px;
-  /* background-color: #8f4646; */
+  background-color: #8f4646;
   border-radius: 50px;
   border: white solid 2px;
   cursor: pointer;
@@ -151,7 +167,7 @@ section {
   left: calc(10vw);
   top: 45ch;
 
-  background: transparent;
+  /* background: transparent; */
 }
 
 .map-btn-wrapper {
