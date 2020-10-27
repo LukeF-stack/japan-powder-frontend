@@ -43,27 +43,31 @@ class DestinationParent extends React.Component {
           <div className="map-img">
             <img src="/images/japan_islands.svg" alt="map of japan" />
           </div>
-          <DestinationChild
-            destination="Hakuba Valley"
-            destinationId="5f4f0c4d6dc6a63a00dfd95a"
-            displayInfo={this.getInfo}
-            open_weather_id={this.state.open_weather_id}
-          />
-          <DestinationChild
-            destination="Niseko"
-            destinationId="5f51ee44a99a94584080dc10"
-            displayInfo={this.getInfo}
-          />
-          <DestinationChild
-            destination="Shiga Kogen"
-            destinationId="5f576091a066892294ead2de"
-            displayInfo={this.getInfo}
-          />
-          <DestinationChild
-            destination="Rusutsu"
-            destinationId="5f5761d6a066892294ead2df"
-            displayInfo={this.getInfo}
-          />
+          <div className="map-btn-wrapper">
+            <div className="map-btn-container">
+              <DestinationChild
+                destination="Hakuba Valley"
+                destinationId="5f4f0c4d6dc6a63a00dfd95a"
+                displayInfo={this.getInfo}
+                open_weather_id={this.state.open_weather_id}
+              />
+              <DestinationChild
+                destination="Niseko"
+                destinationId="5f51ee44a99a94584080dc10"
+                displayInfo={this.getInfo}
+              />
+              <DestinationChild
+                destination="Shiga Kogen"
+                destinationId="5f576091a066892294ead2de"
+                displayInfo={this.getInfo}
+              />
+              <DestinationChild
+                destination="Rusutsu"
+                destinationId="5f5761d6a066892294ead2df"
+                displayInfo={this.getInfo}
+              />
+            </div>
+          </div>
         </div>
       </div>
     );

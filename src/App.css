@@ -93,40 +93,44 @@ section {
 
 .map-title {
   height: fit-content;
-  margin: auto;
+  margin: auto 0 0;
   grid-row: 2;
   font-weight: 600;
+  grid-column: 2;
 }
 .destination-bio {
-  margin: auto;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20% 30% repeat(1, minmax(700px, 1fr)) 10%;
+  grid-template-rows: 20% 10% 30% 10% 1fr;
 }
 
 .destination-bio p {
-  grid-column: 1;
-  width: 50%;
-  margin: auto;
+  grid-column: 2;
+  width: 80%;
+  margin: auto 0;
   grid-row: 3;
+  font-size: 0.7vw;
 }
 
 .destination-bio a {
-  grid-column: 1;
-  width: 50%;
+  grid-column: 2;
+  width: fit-content;
   height: fit-content;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   grid-row: 4;
 }
 
 .island-description {
   grid-row: 6;
-  height: fit-content;
+  height: 40px;
   margin: auto;
-  margin-bottom: 20px;
-  margin-right: 30px;
-  grid-column: 2;
+  grid-column: 4;
+  width: fit-content;
 }
 
 .map-buttons {
-  grid-column: 2;
+  grid-column: 3;
   grid-row: span 5;
   display: grid;
   grid-template-columns: 1fr;
@@ -135,21 +139,41 @@ section {
 
 .map-point {
   position: absolute;
-  width: 0.8vw;
-  height: 0.8vw;
-  background-color: #8f4646;
+  width: 35px;
+  height: 35px;
+  /* background-color: #8f4646; */
   border-radius: 50px;
   border: white solid 2px;
   cursor: pointer;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.096);
-  min-width: 1px;
+  box-shadow: 3px 4px 7px 0px rgba (0, 0, 0, 0.096);
+
   padding: 0;
+  left: calc(10vw);
+  top: 45ch;
+
+  background: transparent;
+}
+
+.map-btn-wrapper {
+  grid-row: 2;
+  grid-column: 1;
+  display: block;
+  margin: auto;
+  width: 20vw;
+  height: 90%;
+  /* max-width: 60ch; */
+  min-width: 40ch;
+}
+
+.map-btn-container {
+  position: absolute;
 }
 
 .map-img {
   grid-row: 2;
   display: block;
   margin: auto;
+  grid-column: 1;
 }
 
 .map-img img {
@@ -272,7 +296,7 @@ ul {
 
 .page-title {
   text-align: center;
-  margin-top: 20vh;
+  margin-top: 15vh;
 }
 
 .section-title {
@@ -302,13 +326,6 @@ ul {
   width: 70%;
   max-width: 800px;
   margin: auto;
-}
-
-.destination-bio {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(1000px, 1fr));
-  grid-template-rows: 20% 10% 30% 10% 1fr;
 }
 
 .resort-result {
