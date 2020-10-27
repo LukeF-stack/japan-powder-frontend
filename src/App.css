@@ -102,7 +102,7 @@ section {
   height: 100vh;
   display: grid;
   grid-template-columns: 20% 30% repeat(1, minmax(700px, 1fr)) 10%;
-  grid-template-rows: 20% 10% 30% 10% 1fr;
+  grid-template-rows: 20% 10% 25% 10% 1fr;
 }
 
 .destination-bio p {
@@ -131,7 +131,7 @@ section {
 }
 #shiga_kogen {
   top: 37ch;
-  left: calc(10vw + 30px);
+  left: calc(10vw + 50px);
 }
 #hakuba_valley {
   top: 42ch;
@@ -188,7 +188,7 @@ section {
 .map-img {
   grid-row: 2;
   display: block;
-  margin: auto;
+  /* margin: auto; */
   grid-column: 1;
 }
 
