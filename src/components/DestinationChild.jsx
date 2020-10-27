@@ -6,11 +6,7 @@ function DestinationChild(props) {
   const displayInfoParams = () => {
     displayInfo(destinationId);
   };
-  return (
-    <div>
-      <button onClick={displayInfoParams} className="map-point"></button>
-    </div>
-  );
+  return <button onClick={displayInfoParams} className="map-point"></button>;
 }
 
 export default DestinationChild;
