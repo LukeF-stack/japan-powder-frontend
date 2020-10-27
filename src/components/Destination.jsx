@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 class DestinationParent extends React.Component {
   state = {
-    destinationTitle: "SELECT A DESTINATION"
+    destinationTitle: "SELECT A DESTINATION",
+    destinationDescription: "click on the destination points to learn more"
   };
   getInfo = async (value) => {
     try {
