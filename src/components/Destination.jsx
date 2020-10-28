@@ -35,7 +35,9 @@ class DestinationParent extends React.Component {
         </h1>
         <p>{this.state.destinationDescription}</p>
         <Link to={`/destinations/${this.state.destinationId}/info`}>
-          <h5>{this.state.buttonTitle}</h5>
+          {this.state.buttonTitle ? (
+            <h5> {this.state.buttonTitle} &nbsp; &#x279C;</h5>
+          ) : null}
         </Link>
         <h6 className="island-description">
           <strong>{this.state.island}</strong>

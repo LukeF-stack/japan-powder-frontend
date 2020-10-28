@@ -119,6 +119,7 @@ section {
   height: fit-content;
   /* margin: 0 auto; */
   grid-row: 4;
+  color: #940000;
 }
 
 #rusutsu {
@@ -166,8 +167,18 @@ section {
   padding: 0;
   left: calc(10vw);
   top: 45ch;
-
+  transition: all ease 0.3s;
   /* background: transparent; */
+}
+
+.map-point:hover {
+  transform: scale(1.1);
+}
+
+.map-point:focus {
+  border-color: #641111;
+  background-color: white;
+  box-shadow: none;
 }
 
 .map-btn-wrapper {
@@ -304,6 +315,10 @@ ul {
   width: 100%;
   /* display: grid;
   grid-template-rows: 200px 1fr; */
+  background-image: url("./images/japan_background.svg");
+  background-color: #fffffd;
+  background-position: top;
+  background-repeat: no-repeat;
 }
 .homePage-map ul {
   z-index: 1;
@@ -312,7 +327,7 @@ ul {
 
 .page-title {
   text-align: center;
-  margin-top: 15vh;
+  margin-top: 10vh;
 }
 
 .section-title {
