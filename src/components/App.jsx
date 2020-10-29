@@ -15,6 +15,7 @@ import AccountPage from "../page-controllers/accountPage";
 //import SetUser from "./SetUser";
 //import SetUserContext from "./User";
 import { User } from "./User";
+import { NotificationContainer } from "react-notifications";
 //import { useHistory } from "react-router-dom";
 //import DestinationInfo from "./DestinationInfo";
 
@@ -77,6 +78,7 @@ function App() {
               <Route path="/account" exact component={AccountPage} />
             ) : null}
           </Switch>
+          <NotificationContainer />
         </UserContext.Provider>
       </div>
     </Router>

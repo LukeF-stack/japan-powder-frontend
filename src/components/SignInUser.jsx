@@ -2,6 +2,8 @@ import { useEffect, useContext } from "react";
 import "../App.css";
 import { UserContext } from "./UserContext";
 import { useHistory } from "react-router-dom";
+import { NotificationManager } from "react-notifications";
+import "react-notifications/lib/notifications.css";
 
 function SignInUser(props) {
   const { userData } = props;
@@ -12,6 +14,7 @@ function SignInUser(props) {
     setUser(userData);
     history.push("/");
     console.log(`Welcome ${userData.fullName}`);
+    NotificationManager.success(`Welcome ${userData.fullName}`, "", 2000);
   }, [setUser, userData, history]);
   return null;
 }

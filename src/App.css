@@ -6,6 +6,15 @@
   box-sizing: border-box;
 }
 
+.notification-success {
+  background-color: white;
+  color: black;
+}
+
+.notification-success::before {
+  content: "";
+}
+
 body {
   font-family: "Inter", sans-serif;
   font-weight: 300;
