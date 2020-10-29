@@ -10,7 +10,7 @@ function Nav() {
     <nav>
       <div id="logo">
         <Link to="/">
-          <img src="images/powder_logo.svg" alt="Powder Japan Logo" />
+          <img src="/images/powder_logo.svg" alt="Powder Japan Logo" />
         </Link>
       </div>
       <ul className="nav-links">

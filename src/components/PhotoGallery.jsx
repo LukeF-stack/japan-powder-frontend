@@ -6,7 +6,7 @@ function PhotoGallery(props) {
   const [activePhoto, setActivePhoto] = useState({});
   //const [destination, setDestination] = useState({});
   useEffect(() => {
-    console.log(props);
+    //console.log(props);
     getPhotos(props);
   }, [props]);
 

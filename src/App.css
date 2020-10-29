@@ -85,7 +85,7 @@ section {
 }
 
 .weather h4 {
-  margin: 60px 0;
+  margin: 50px 0;
 }
 
 .weather-icon {
@@ -97,7 +97,7 @@ section {
   flex-wrap: wrap;
   width: 100%;
   padding: 0;
-  margin: 60px 0;
+  margin: 50px 0;
   justify-content: space-around;
 }
 
@@ -280,7 +280,11 @@ ul {
 .form {
   margin: auto;
   width: 40vw;
-  max-width: 600px;
+  max-width: 500px;
+}
+
+form button {
+  width: 100%;
 }
 
 .homePage-hero {
@@ -345,7 +349,7 @@ ul {
 
 .page-title {
   text-align: center;
-  margin-top: 10vh;
+  margin: 10vh auto 5vh;
 }
 
 .section-title {
@@ -373,7 +377,7 @@ ul {
 
 .destination-info {
   width: 70%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -383,6 +387,7 @@ ul {
   height: 200px;
   box-shadow: 3px 4px 5px -1px rgba(0, 0, 0, 0.28);
   border-radius: 5px;
+  margin: 20px;
 }
 
 .fav-btn {
@@ -391,4 +396,12 @@ ul {
   width: 15px;
   height: 15px;
   visibility: hidden;
+}
+
+.resorts-results {
+  padding: 0;
+  display: flex;
+  width: 70%;
+  max-width: 1000px;
+  margin: 20px auto;
 }
