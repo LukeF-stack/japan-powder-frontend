@@ -3,6 +3,8 @@ import "../App.css";
 import SignInForm from "../components/SignInForm";
 //import { User } from "../components/User.js";
 import SignInUser from "../components/SignInUser";
+import { NotificationManager } from "react-notifications";
+import "react-notifications/lib/notifications.css";
 
 class SignInPage extends React.Component {
   setUser = [];
@@ -23,11 +25,13 @@ class SignInPage extends React.Component {
         settings
       );
       const data = await response.json();
-      //console.log(data);
+      //console.log(data.message);
       if (!data) {
         console.log("problem signing in");
+      } else if (data.message) {
+        NotificationManager.error(data.message);
       } else {
-        //console.log(data.user);
+        //console.log(data);
         this.userData = data.user;
         this.User = this.userData;
         this.setUser.push(<SignInUser key="1" userData={this.User} />);
@@ -36,6 +40,7 @@ class SignInPage extends React.Component {
       }
     } catch (e) {
       console.log(e.message);
+      //NotificationManager.error("Problem signing in user", "", 2000);
     }
   };
 
