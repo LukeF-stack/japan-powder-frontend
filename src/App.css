@@ -6,9 +6,14 @@
   box-sizing: border-box;
 }
 
+.notification-container {
+  top: 80px;
+}
+
 .notification-success {
   background-color: white;
   color: black;
+  margin: 20px;
 }
 
 .notification-success::before {
@@ -18,6 +23,7 @@
 .notification-error {
   background-color: white;
   color: black;
+  margin: 20px;
 }
 
 .notification-error::before {
@@ -128,7 +134,7 @@ section {
   width: 80%;
   margin: 30px 0 auto;
   grid-row: 3;
-  font-size: 0.7vw;
+  font-size: 0.8vw;
 }
 
 .destination-bio a {
@@ -207,7 +213,7 @@ section {
   width: 20vw;
   height: 90%;
   /* max-width: 60ch; */
-  min-width: 40ch;
+  min-width: 30ch;
 }
 
 .map-btn-container {
@@ -404,4 +410,10 @@ form button {
   width: 70%;
   max-width: 1000px;
   margin: 20px auto;
+}
+
+@media only screen and (min-width: 1280px) {
+  .destination-bio p {
+    font-size: 0.7vw;
+  }
 }
