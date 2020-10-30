@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
+import { NotificationContainer } from "react-notifications";
 import "../App.css";
 import Nav from "./Nav";
 import HomePage from "../page-controllers/homePage";
@@ -15,7 +16,7 @@ import AccountPage from "../page-controllers/accountPage";
 //import SetUser from "./SetUser";
 //import SetUserContext from "./User";
 import { User } from "./User";
-import { NotificationContainer } from "react-notifications";
+
 //import { useHistory } from "react-router-dom";
 //import DestinationInfo from "./DestinationInfo";
 

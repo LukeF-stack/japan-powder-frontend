@@ -20,12 +20,12 @@ function Nav() {
         <Link to="/destinations">
           <li>Destinations</li>
         </Link>
-        <Link to="/about">
+        {/* <Link to="/about">
           <li>About</li>
-        </Link>
-        <Link to="/contact">
+        </Link> */}
+        {/* <Link to="/contact">
           <li>Contact</li>
-        </Link>
+        </Link> */}
         {!user.authenticated ? (
           <Link to="/signup">
             <li>Sign Up</li>

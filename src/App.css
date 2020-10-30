@@ -6,31 +6,6 @@
   box-sizing: border-box;
 }
 
-.notification-container {
-  top: 80px;
-}
-
-.notification-success {
-  background-color: white;
-  color: black;
-  margin: 20px;
-}
-
-.notification-success::before {
-  content: "";
-}
-
-.notification-error {
-  background-color: white;
-  color: black;
-  margin: 20px;
-  border: #bd0909 solid 2px;
-}
-
-.notification-error::before {
-  content: "";
-}
-
 body {
   font-family: "Inter", sans-serif;
   font-weight: 300;
@@ -411,6 +386,31 @@ form button {
   width: 70%;
   max-width: 1000px;
   margin: 20px auto;
+}
+
+.notification-container {
+  top: 80px;
+}
+
+.notification-success {
+  background-color: white;
+  color: black;
+  margin: 20px;
+}
+
+.notification-success::before {
+  content: "";
+}
+
+.notification-error {
+  background-color: white;
+  color: black;
+  margin: 20px;
+  border: #bd0909 solid 2px;
+}
+
+.notification-error::before {
+  content: "";
 }
 
 @media only screen and (min-width: 1280px) {
