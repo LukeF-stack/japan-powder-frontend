@@ -10,9 +10,11 @@ function AccountPage() {
   return (
     <div>
       <h1 className="page-title">Account</h1>
-      <pre>{JSON.stringify(user, null, 2)}</pre>
-      <SignOutBtn />
+      {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
+      <h2>{user.fullName}</h2>
+      <h3>{user.email}</h3>
       <Favs />
+      <SignOutBtn />
     </div>
   );
 }
