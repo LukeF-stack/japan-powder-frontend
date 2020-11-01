@@ -4,11 +4,17 @@ import "../App.css";
 function PhotoGallery(props) {
   const [gallery, setGallery] = useState([]);
   const [activePhoto, setActivePhoto] = useState({});
+  const [isShown, setShown] = useState(false);
   //const [destination, setDestination] = useState({});
   useEffect(() => {
     //console.log(props);
     getPhotos(props);
   }, [props]);
+
+  const showModal = (photo) => {
+    setActivePhoto(photo);
+    setShown(true);
+  };
 
   const getPhotos = async (props) => {
     //console.log("id is", props.id);
@@ -22,7 +28,7 @@ function PhotoGallery(props) {
       const images = [];
       destination.photos.forEach((photo) => {
         images.push(
-          <li key={photo} onClick={() => setActivePhoto(photo)}>
+          <li key={photo} onClick={() => showModal(photo)}>
             <div
               className="photo-result"
               style={{ backgroundImage: `url(${photo})` }}
@@ -40,11 +46,23 @@ function PhotoGallery(props) {
   return (
     <div>
       <div className="grid-container">
-        <div className="gallery-modal">
-          <img src={activePhoto} alt={activePhoto} className="displayed-img" />
-        </div>
         <ul className="photo-grid">{gallery}</ul>
       </div>
+      {isShown ? (
+        <div
+          className="gallery-modal"
+          onClick={(e) => {
+            //console.log(e.target.children);
+            setShown(false);
+          }}
+        ></div>
+      ) : null}
+
+      {isShown ? (
+        <div className="gallery-modal-photo">
+          <img src={activePhoto} alt={activePhoto} className="displayed-img" />
+        </div>
+      ) : null}
     </div>
   );
 }
