@@ -63,6 +63,13 @@ section {
   background: rgba(37, 37, 37, 0.877);
 }
 
+.modal_arrow {
+  margin: auto 60px;
+  display: block;
+  width: 30px;
+  padding: 3px;
+}
+
 .displayed-img {
   margin: auto;
   display: block;
@@ -131,7 +138,7 @@ section {
 .destination-bio {
   height: 100vh;
   display: grid;
-  grid-template-columns: 20% 30% repeat(1, minmax(700px, 1fr)) 10%;
+  grid-template-columns: 20% 30% repeat(1, minmax(700px, 1fr)) 1fr;
   grid-template-rows: 20% 10% 25% 10% 1fr;
 }
 
@@ -279,6 +286,7 @@ nav ul {
 .nav-links li {
   color: rgb(34, 34, 34);
   transition: all ease 0.3s;
+  font-weight: 400;
 }
 
 .nav-links li:hover {
@@ -290,7 +298,7 @@ ul {
 }
 
 .form {
-  margin: auto;
+  margin: 20vh auto;
   width: 40vw;
   max-width: 500px;
 }
