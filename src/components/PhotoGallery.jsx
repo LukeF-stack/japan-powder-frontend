@@ -20,20 +20,17 @@ function PhotoGallery(props) {
 
   const nextPhoto = () => {
     //console.log(activePhoto);
-    //console.log(photoList);
-    // const photo = photoList.filter(function (result) {
-    //   if (activePhoto.index <= photoList.length + 1) {
-    //     return result.index === activePhoto.index + 1;
-    //   } else {
-    //     return result.index === "0";
-    //   }
-    // });
-    //console.log(photoList);
     if (activePhoto.index < photoList.length - 1) {
       setActivePhoto(photoList[activePhoto.index + 1]);
     } else {
       console.log("set to 0");
       setActivePhoto(photoList[0]);
+    }
+  };
+
+  const previousPhoto = () => {
+    if (activePhoto.index > 0) {
+      setActivePhoto(photoList[activePhoto.index - 1]);
     }
   };
 
@@ -92,9 +89,16 @@ function PhotoGallery(props) {
 
       {isShown ? (
         <div className="gallery-modal-photo">
-          <div className="modal_arrow">
-            <img src="/images/arrow_left.svg" alt="right arrow" />
-          </div>
+          {activePhoto.index > 0 ? (
+            <div
+              className="modal_arrow"
+              onClick={() => {
+                previousPhoto();
+              }}
+            >
+              <img src="/images/arrow_left.svg" alt="right arrow" />
+            </div>
+          ) : null}
           <img
             src={activePhoto.src}
             alt={activePhoto.src}
