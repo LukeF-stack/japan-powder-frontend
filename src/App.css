@@ -79,6 +79,25 @@ section {
   transform: scale(1.2);
 }
 
+.modal-close {
+  position: absolute;
+  /* width: 1.5vw; */
+  /* height: 1.5vw; */
+  font-size: 3vw;
+  line-height: 1em;
+  /* float: right; */
+  right: 0;
+  margin: 0 2vw;
+  color: white;
+  z-index: 10;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  transform: scale(1.1);
+}
+
 .displayed-img {
   margin: auto;
   display: block;

@@ -84,7 +84,9 @@ function PhotoGallery(props) {
             //console.log(e.target.children);
             setShown(false);
           }}
-        ></div>
+        >
+          <div className="modal-close"> &#10799;</div>
+        </div>
       ) : null}
 
       {isShown ? (
