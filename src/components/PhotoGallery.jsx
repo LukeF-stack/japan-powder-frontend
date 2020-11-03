@@ -16,6 +16,7 @@ function PhotoGallery(props) {
     //const photo = { index: photoIndex, src: photoSrc };
     setActivePhoto(photo);
     setShown(true);
+    document.querySelector(".destination-page").classList.add("photo-view");
   };
 
   const nextPhoto = () => {
@@ -82,6 +83,9 @@ function PhotoGallery(props) {
           className="gallery-modal"
           onClick={(e) => {
             //console.log(e.target.children);
+            document
+              .querySelector(".destination-page")
+              .classList.remove("photo-view");
             setShown(false);
           }}
         >

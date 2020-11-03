@@ -35,7 +35,7 @@ section {
 
 .grid-container {
   margin: auto;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   width: 70%;
   max-width: 1000px;
 }
@@ -61,7 +61,7 @@ section {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(37, 37, 37, 0.877);
+  background: rgba(14, 14, 14, 0.836);
 }
 
 .modal_arrow {
@@ -101,7 +101,7 @@ section {
 .displayed-img {
   margin: auto;
   display: block;
-  height: 70vh;
+  width: 60vw;
 }
 
 .photo-grid {
@@ -163,6 +163,16 @@ section {
   font-weight: 600;
   grid-column: 2;
 }
+
+.destination-page {
+  display: grid;
+}
+
+.photo-view {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .destination-bio {
   height: 100vh;
   display: grid;
@@ -413,7 +423,7 @@ form button {
 
 .page-title {
   text-align: center;
-  margin: 10vh auto 5vh;
+  margin: 10vh auto 0;
 }
 
 .section-title {
@@ -427,7 +437,7 @@ form button {
   padding: 0;
   width: 50%;
   max-width: 600px;
-  margin: 30px auto;
+  margin: 60px auto;
 }
 
 .nav-tabs li {

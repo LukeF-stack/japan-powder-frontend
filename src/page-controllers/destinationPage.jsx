@@ -138,7 +138,7 @@ function DestinationPage({ match }) {
     }
   };
   return (
-    <div>
+    <div className="destination-page">
       {theDestination !== null ? (
         <h1 className="page-title">{theDestination.title}</h1>
       ) : null}
