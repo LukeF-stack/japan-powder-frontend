@@ -193,19 +193,30 @@ section {
 
 .map-point {
   position: absolute;
-  width: 25px;
-  height: 25px;
-  background-color: #8f4646;
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff3d;
   border-radius: 50px;
-  border: white solid 2px;
+  border: #ececec solid 2px;
   cursor: pointer;
-  box-shadow: 3px 4px 7px 0px rgba (0, 0, 0, 0.096);
-
+  box-shadow: 3px 4px 7px 0px rgba (0, 0, 0, 0.096);
   padding: 0;
   left: calc(10vw);
   top: 45ch;
-  transition: all ease 0.3s;
-  /* background: transparent; */
+  transition: all ease 0.3s; /* background: transparent; */
+  margin: 10px;
+}
+
+.map-point::before {
+  display: block;
+  /* position: absolute; */
+  content: " ";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  margin: auto;
+  box-shadow: 3px 4px 7px 0px rgba (0, 0, 0, 0.096);
 }
 
 .map-point:hover {
@@ -213,8 +224,8 @@ section {
 }
 
 .map-point:focus {
-  border-color: #641111;
-  background-color: white;
+  border-color: #ffffff;
+  background-color: rgba(214, 214, 214, 0.603);
   box-shadow: none;
 }
 
