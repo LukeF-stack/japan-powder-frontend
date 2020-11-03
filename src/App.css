@@ -36,7 +36,8 @@ section {
 .grid-container {
   margin: auto;
   margin-top: 10vh;
-  max-width: 80vw;
+  width: 70%;
+  max-width: 1000px;
 }
 
 .gallery-modal-photo {
@@ -165,6 +166,11 @@ section {
   /* margin: 0 auto; */
   grid-row: 4;
   color: #940000;
+  transition: all ease 0.3s;
+}
+
+.destination-bio a:hover {
+  padding-left: 20px;
 }
 
 #rusutsu {
@@ -268,7 +274,7 @@ section {
 nav {
   position: fixed;
   width: 100%;
-  height: 60px;
+  height: 80px;
   justify-content: flex-end;
   display: flex;
   /* background-color: rgb(37, 37, 37); */
