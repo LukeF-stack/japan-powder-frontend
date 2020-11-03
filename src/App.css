@@ -338,8 +338,8 @@ nav ul {
 }
 
 .nav-links li {
-  color: rgb(34, 34, 34);
-  transition: all ease 0.3s;
+  color: #202020;
+  transition: all ease 0.2s;
   font-weight: 400;
 }
 
@@ -384,7 +384,7 @@ form button {
 
 .homePage-hero-title {
   margin: 0;
-  color: black;
+  color: #202020;
   margin-top: 9vh;
   grid-row: 2;
   grid-column: 2;
@@ -486,7 +486,7 @@ form button {
 
 .notification-success {
   background-color: white;
-  color: black;
+  color: #202020;
   margin: 20px;
 }
 
@@ -496,7 +496,7 @@ form button {
 
 .notification-error {
   background-color: white;
-  color: black;
+  color: #202020;
   margin: 20px;
   border: #bd0909 solid 2px;
 }
