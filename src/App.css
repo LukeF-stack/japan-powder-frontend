@@ -64,10 +64,18 @@ section {
 }
 
 .modal_arrow {
-  margin: auto 60px;
-  display: block;
+  margin: 0 60px;
+  display: flex;
   width: 30px;
   padding: 3px;
+  height: 50px;
+  align-self: center;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.modal_arrow:hover {
+  transform: scale(1.2);
 }
 
 .displayed-img {
