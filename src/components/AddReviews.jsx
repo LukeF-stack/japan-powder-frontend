@@ -4,7 +4,7 @@ import { UserContext } from "./UserContext";
 import { NotificationManager } from "react-notifications";
 import "react-notifications/lib/notifications.css";
 
-function Reviews(props) {
+function AddReviews(props) {
   const { id } = props;
   const { user } = useContext(UserContext);
   const [review, setReview] = useState({});
@@ -84,4 +84,4 @@ function Reviews(props) {
   );
 }
 
-export default Reviews;
+export default AddReviews;
