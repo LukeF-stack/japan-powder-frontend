@@ -10,7 +10,7 @@ function Reviews(props) {
   const [review, setReview] = useState({});
 
   const createReview = async () => {
-    console.log("signupPage got", review);
+    //console.log("signupPage got", review);
 
     const fields = {
       Location_id: id,
@@ -69,6 +69,7 @@ function Reviews(props) {
           <h4>add a review</h4>
           <form action="">
             <textarea
+              maxLength="800"
               name="message"
               type="message"
               value={review.message}
