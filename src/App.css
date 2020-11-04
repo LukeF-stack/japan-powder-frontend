@@ -505,6 +505,17 @@ form button {
   content: "";
 }
 
+.reviews-bar {
+  display: flex;
+  justify-content: space-around;
+  width: 20vw;
+  margin: auto;
+}
+
+.reviews-bar h2 {
+  margin: 20px;
+}
+
 @media only screen and (min-width: 1280px) {
   .destination-bio p {
     font-size: 0.7vw;

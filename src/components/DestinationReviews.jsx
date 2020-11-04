@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import AddReviews from "./AddReviews.jsx";
 
 function DestinationReviews(props) {
   const { match } = props;
+  const [addReviewShown, setAddReviewShown] = useState(false);
+
+  const showAddReview = () => {
+    setAddReviewShown(true);
+  };
+
   return (
     <div className="destination=reviews">
-      <h1 className="section-title">Reviews</h1>
-      <AddReviews id={match.params.id} />
+      <div className="reviews-bar">
+        <h2 className="section-title">Reviews</h2>
+        <button>Add a Review?</button>
+      </div>
+      {addReviewShown ? <AddReviews id={match.params.id} /> : null}
     </div>
   );
 }
