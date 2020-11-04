@@ -14,7 +14,13 @@ function DestinationReviews(props) {
     <div className="destination=reviews">
       <div className="reviews-bar">
         <h2 className="section-title">Reviews</h2>
-        <button>Add a Review?</button>
+        <button
+          onClick={() => {
+            setAddReviewShown(true);
+          }}
+        >
+          Add a Review
+        </button>
       </div>
       {addReviewShown ? <AddReviews id={match.params.id} /> : null}
     </div>

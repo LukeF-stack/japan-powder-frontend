@@ -66,7 +66,6 @@ function AddReviews(props) {
     <div>
       {user.authenticated ? (
         <div className="form">
-          <h4>add a review</h4>
           <form action="">
             <textarea
               maxLength="800"
