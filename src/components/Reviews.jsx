@@ -1,14 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../App.css";
+import { UserContext } from "./UserContext";
+import { NotificationManager } from "react-notifications";
 
 function Reviews(props) {
+  const { user } = useContext(UserContext);
   const { id, state } = props;
+  const [refresh, setRefresh] = useState({});
 
   const [reviewResults, setReviewResults] = useState([]);
 
   useEffect(() => {
     getReviews();
-  }, [state]);
+  }, [user, state, refresh]);
+
+  const deleteReview = async (review_id) => {
+    const settings = {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    };
+    try {
+      const response = await fetch(
+        `https://dsbn3.sse.codesandbox.io/api/reviews/${review_id}`,
+        settings
+      );
+      const data = await response.json();
+      if (data.status !== 500) {
+        //console.log(data);
+        setRefresh(data);
+        NotificationManager.success(data.msg);
+      } else {
+        NotificationManager.error(data.msg);
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
 
   const getReviews = async () => {
     try {
@@ -32,6 +62,18 @@ function Reviews(props) {
                 <h6>{new Date(review.Timestamp).toDateString()}</h6>
               ) : null}
               <p>{review.Body}</p>
+              {user._id === review.User_id ? (
+                <div>
+                  <button>edit</button>
+                  <button
+                    onClick={() => {
+                      deleteReview(review._id);
+                    }}
+                  >
+                    delete
+                  </button>
+                </div>
+              ) : null}
             </div>
           </li>
         );
