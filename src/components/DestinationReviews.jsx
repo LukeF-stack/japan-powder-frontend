@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../App.css";
 import AddReviews from "./AddReviews.jsx";
+import { UserContext } from "./UserContext";
 
 function DestinationReviews(props) {
+  const { user } = useContext(UserContext);
   const { match } = props;
-  const [addReviewShown, setAddReviewShown] = useState(false);
+  const [addReviewShown, setAddReviewShown] = useState({ shown: false });
 
   const showAddReview = () => {
     setAddReviewShown(true);
@@ -14,15 +16,20 @@ function DestinationReviews(props) {
     <div className="destination=reviews">
       <div className="reviews-bar">
         <h2 className="section-title">Reviews</h2>
-        <button
-          onClick={() => {
-            setAddReviewShown(true);
-          }}
-        >
-          Add a Review
-        </button>
+        {user.authenticated ? (
+          <button
+            onClick={() => {
+              setAddReviewShown((prevState) => ({
+                shown: !prevState.shown
+              }));
+              //setButtonText("cancel");
+            }}
+          >
+            {addReviewShown.shown ? "cancel" : "add a review"}
+          </button>
+        ) : null}
       </div>
-      {addReviewShown ? <AddReviews id={match.params.id} /> : null}
+      {addReviewShown.shown ? <AddReviews id={match.params.id} /> : null}
     </div>
   );
 }

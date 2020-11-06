@@ -50,6 +50,7 @@ section {
   display: flex;
   width: fit-content;
   height: fit-content;
+  z-index: 12;
 }
 
 .gallery-modal {
@@ -62,6 +63,7 @@ section {
   width: 100%;
   height: 100%;
   background: rgba(14, 14, 14, 0.836);
+  z-index: 10;
 }
 
 .modal_arrow {

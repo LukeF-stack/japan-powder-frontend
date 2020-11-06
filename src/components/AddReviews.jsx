@@ -70,7 +70,7 @@ function AddReviews(props) {
             <textarea
               maxLength="800"
               name="message"
-              type="message"
+              type="text"
               value={review.message}
               placeholder="How was your experience?"
               onChange={(e) => change(e)}
