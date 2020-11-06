@@ -470,17 +470,27 @@ form button {
 }
 
 .resort-result {
-  /* padding: 10px; */
+  padding: 10px;
   width: 200px;
   height: 200px;
   box-shadow: 3px 4px 5px -1px rgba(0, 0, 0, 0.28);
   /* border-radius: 5px; */
-  margin: 20px;
   background-size: cover;
+}
+
+.resort-li {
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 3px 4px 5px -1px rgba(0, 0, 0, 0.28);
   transition: all ease 0.3s;
 }
 
-.resort-result:hover {
+.resort-li h5 {
+  color: #202020;
+  font-weight: 600;
+}
+
+.resort-li:hover {
   transform: scale(1.1);
 }
 
