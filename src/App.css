@@ -470,8 +470,14 @@ form button {
   width: 200px;
   height: 200px;
   box-shadow: 3px 4px 5px -1px rgba(0, 0, 0, 0.28);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   margin: 20px;
+  background-size: cover;
+  transition: all ease 0.3s;
+}
+
+.resort-result:hover {
+  transform: scale(1.1);
 }
 
 .review-result {
