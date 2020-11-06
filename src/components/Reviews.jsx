@@ -25,7 +25,7 @@ function Reviews(props) {
       results.forEach((review) => {
         //console.log(review);
         reviews.push(
-          <li key={review._id} onClick={() => showModal(photoObj)}>
+          <li key={review._id}>
             <div className="review-result">
               <h4>{review.Name}</h4>
               <p>{review.Body}</p>
