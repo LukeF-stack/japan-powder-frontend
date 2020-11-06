@@ -1,12 +1,10 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import "../App.css";
 import { UserContext } from "./UserContext";
 import { NotificationManager } from "react-notifications";
 import "react-notifications/lib/notifications.css";
-import { useHistory } from "react-router-dom";
 
 function AddReviews(props) {
-  const history = useHistory();
   const { id } = props;
   const { user } = useContext(UserContext);
   const [review, setReview] = useState({});
