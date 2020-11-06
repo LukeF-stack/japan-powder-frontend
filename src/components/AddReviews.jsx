@@ -17,12 +17,14 @@ function AddReviews(props) {
 
   const createReview = async () => {
     //console.log("signupPage got", review);
+    const stamp = Date.now();
 
     const fields = {
       Location_id: id,
       Name: user.fullName,
       Body: review.message,
-      User_id: user._id
+      User_id: user._id,
+      Timestamp: stamp
     };
 
     //console.log(fields);

@@ -28,6 +28,9 @@ function Reviews(props) {
           <li key={review._id} className="review-result-li">
             <div className="review-result">
               <h4>{review.Name}</h4>
+              {review.Timestamp ? (
+                <h6>{new Date(review.Timestamp).toDateString()}</h6>
+              ) : null}
               <p>{review.Body}</p>
             </div>
           </li>
