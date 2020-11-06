@@ -96,7 +96,7 @@ function AddReviews(props) {
             //setButtonText("cancel");
           }}
         >
-          {isShown ? "cancel" : "add a review"}
+          {isShown ? <>cancel &ensp; &#10005;</> : <>add a review</>}
         </button>
       ) : null}
       <Reviews id={id} state={state} />

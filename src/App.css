@@ -359,7 +359,7 @@ ul {
   max-width: 500px;
 }
 .form-small {
-  margin: auto;
+  margin: 20px auto;
 }
 
 form button {
@@ -367,7 +367,7 @@ form button {
 }
 
 .review-toggle-button {
-  margin: 10px auto;
+  margin: 30px auto 0;
   display: flex;
 }
 
@@ -536,7 +536,7 @@ form button {
   width: 60vw;
   display: flex;
   margin: 40px auto;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .reviews-wrapper ul {
