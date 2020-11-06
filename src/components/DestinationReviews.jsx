@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 import AddReviews from "./AddReviews.jsx";
-import Reviews from "./Reviews.jsx";
+// import Reviews from "./Reviews.jsx";
 
 function DestinationReviews(props) {
   const { match } = props;
@@ -13,7 +13,7 @@ function DestinationReviews(props) {
       </div>
 
       <AddReviews id={match.params.id} />
-      <Reviews id={match.params.id} />
+      {/* <Reviews id={match.params.id} /> */}
     </div>
   );
 }

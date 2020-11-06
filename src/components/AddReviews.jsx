@@ -3,12 +3,14 @@ import "../App.css";
 import { UserContext } from "./UserContext";
 import { NotificationManager } from "react-notifications";
 import "react-notifications/lib/notifications.css";
+import Reviews from "./Reviews.jsx";
 
 function AddReviews(props) {
   const { id } = props;
   const { user } = useContext(UserContext);
   const [review, setReview] = useState({});
   const [isShown, setShown] = useState(false);
+  const [state, setState] = useState({});
   // useEffect(() => {
   //   setShown(shown);
   // }, [shown]);
@@ -45,9 +47,10 @@ function AddReviews(props) {
       } else if (data.msg) {
         NotificationManager.error(data.msg);
       } else {
-        console.log("data is ", data);
+        //console.log("data is ", data);
         NotificationManager.success(`Review successfully added`);
         setShown(false);
+        setState(data);
       }
     } catch (e) {
       console.log(e.message);
@@ -96,6 +99,7 @@ function AddReviews(props) {
           {isShown ? "cancel" : "add a review"}
         </button>
       ) : null}
+      <Reviews id={id} state={state} />
     </div>
   );
 }

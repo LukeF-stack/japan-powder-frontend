@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 
 function Reviews(props) {
-  const { id } = props;
+  const { id, state } = props;
 
   const [reviewResults, setReviewResults] = useState([]);
 
   useEffect(() => {
     getReviews();
-  }, []);
+  }, [state]);
 
   const getReviews = async () => {
     try {
@@ -25,7 +25,7 @@ function Reviews(props) {
       results.forEach((review) => {
         //console.log(review);
         reviews.push(
-          <li key={review._id}>
+          <li key={review._id} className="review-result-li">
             <div className="review-result">
               <h4>{review.Name}</h4>
               <p>{review.Body}</p>
@@ -33,14 +33,14 @@ function Reviews(props) {
           </li>
         );
       });
-      setReviewResults(reviews);
+      setReviewResults(reviews.reverse());
     } catch (e) {
       console.log(e.message);
     }
   };
 
   return (
-    <div>
+    <div className="reviews-wrapper">
       <ul>{reviewResults}</ul>
     </div>
   );
