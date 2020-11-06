@@ -140,7 +140,7 @@ function DestinationPage({ match }) {
   return (
     <div className="destination-page">
       {theDestination !== null ? (
-        <h1 className="page-title">{theDestination.title}</h1>
+        <h1 className="page-title">{theDestination.title.toUpperCase()}</h1>
       ) : null}
       <DestinationNavTabs match={match} />
       <Switch>

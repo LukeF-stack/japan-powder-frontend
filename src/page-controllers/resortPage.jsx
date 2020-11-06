@@ -25,9 +25,12 @@ function ResortPage({ match }) {
       console.log(e);
     }
   };
+
   return (
-    <div>
-      <h1 className="page-title">{resort.title}</h1>
+    <div className="resort-page">
+      {resort.title ? (
+        <h1 className="page-title">{resort.title.toUpperCase()}</h1>
+      ) : null}
       <ResortNavTabs match={match} />
       <Switch>
         <Route path="/resorts/:id/info">

@@ -7,7 +7,11 @@ import PhotoGallery from "./PhotoGallery";
 function DestinationPhotos(props) {
   return (
     <div className="destination-photos">
-      <PhotoGallery db="destinations" id={props.match.params.id} />
+      <PhotoGallery
+        db="destinations"
+        id={props.match.params.id}
+        selector="destination"
+      />
     </div>
   );
 }

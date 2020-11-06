@@ -16,7 +16,9 @@ function PhotoGallery(props) {
     //const photo = { index: photoIndex, src: photoSrc };
     setActivePhoto(photo);
     setShown(true);
-    document.querySelector(".destination-page").classList.add("photo-view");
+    document
+      .querySelector(`.${props.selector}-page`)
+      .classList.add("photo-view");
   };
 
   const nextPhoto = () => {
@@ -24,7 +26,7 @@ function PhotoGallery(props) {
     if (activePhoto.index < photoList.length - 1) {
       setActivePhoto(photoList[activePhoto.index + 1]);
     } else {
-      console.log("set to 0");
+      //console.log("set to 0");
       setActivePhoto(photoList[0]);
     }
   };
@@ -84,7 +86,7 @@ function PhotoGallery(props) {
           onClick={(e) => {
             //console.log(e.target.children);
             document
-              .querySelector(".destination-page")
+              .querySelector(`.${props.selector}-page`)
               .classList.remove("photo-view");
             setShown(false);
           }}
