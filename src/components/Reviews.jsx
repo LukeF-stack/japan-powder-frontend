@@ -136,7 +136,7 @@ function Reviews(props) {
                   {!edit ? (
                     <button
                       onClick={() => {
-                        setEdit(true);
+                        //setEdit(true);
                         //setEditedReview({ message: review.Body });
                       }}
                     >
