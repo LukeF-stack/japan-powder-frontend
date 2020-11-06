@@ -10,7 +10,6 @@ function ResortReviews(props) {
     <div className="destination=reviews">
       <h1 className="section-title">Reviews</h1>
       <AddReviews id={match.params.id} />
-      <Reviews id={match.params.id} />
     </div>
   );
 }
