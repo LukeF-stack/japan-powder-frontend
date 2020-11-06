@@ -1,13 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "../App.css";
 import { UserContext } from "./UserContext";
 import { NotificationManager } from "react-notifications";
 import "react-notifications/lib/notifications.css";
+import { useHistory } from "react-router-dom";
 
 function AddReviews(props) {
+  const history = useHistory();
   const { id } = props;
   const { user } = useContext(UserContext);
   const [review, setReview] = useState({});
+  const [isShown, setShown] = useState(false);
+  // useEffect(() => {
+  //   setShown(shown);
+  // }, [shown]);
 
   const createReview = async () => {
     //console.log("signupPage got", review);
@@ -42,6 +48,8 @@ function AddReviews(props) {
         NotificationManager.error(data.msg);
       } else {
         console.log("data is ", data);
+        NotificationManager.success(`Review successfully added`);
+        setShown(false);
       }
     } catch (e) {
       console.log(e.message);
@@ -64,8 +72,8 @@ function AddReviews(props) {
 
   return (
     <div>
-      {user.authenticated ? (
-        <div className="form">
+      {isShown ? (
+        <div className="form form-small">
           <form action="">
             <textarea
               maxLength="800"
@@ -78,6 +86,17 @@ function AddReviews(props) {
             <button onClick={(e) => onSubmit(e)}>Submit</button>
           </form>
         </div>
+      ) : null}
+      {user.authenticated ? (
+        <button
+          className="review-toggle-button"
+          onClick={() => {
+            setShown((prevState) => !prevState);
+            //setButtonText("cancel");
+          }}
+        >
+          {isShown ? "cancel" : "add a review"}
+        </button>
       ) : null}
     </div>
   );

@@ -358,9 +358,17 @@ ul {
   width: 40vw;
   max-width: 500px;
 }
+.form-small {
+  margin: auto;
+}
 
 form button {
   width: 100%;
+}
+
+.review-toggle-button {
+  margin: 10px auto;
+  display: flex;
 }
 
 .homePage-hero {
@@ -510,12 +518,12 @@ form button {
 .reviews-bar {
   display: flex;
   justify-content: space-around;
-  width: 20vw;
+  width: fit-content;
   margin: auto;
 }
 
-.reviews-bar h2 {
-  margin: 20px;
+.reviews-bar h3 {
+  margin: 10px 20px;
 }
 
 @media only screen and (min-width: 1280px) {

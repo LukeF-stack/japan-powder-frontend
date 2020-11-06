@@ -8,15 +8,11 @@ function DestinationReviews(props) {
   const { match } = props;
   const [addReviewShown, setAddReviewShown] = useState({ shown: false });
 
-  const showAddReview = () => {
-    setAddReviewShown(true);
-  };
-
   return (
     <div className="destination=reviews">
       <div className="reviews-bar">
-        <h2 className="section-title">Reviews</h2>
-        {user.authenticated ? (
+        <h3 className="section-title">Reviews</h3>
+        {/* {user.authenticated ? (
           <button
             onClick={() => {
               setAddReviewShown((prevState) => ({
@@ -27,9 +23,10 @@ function DestinationReviews(props) {
           >
             {addReviewShown.shown ? "cancel" : "add a review"}
           </button>
-        ) : null}
+        ) : null} */}
       </div>
-      {addReviewShown.shown ? <AddReviews id={match.params.id} /> : null}
+
+      <AddReviews id={match.params.id} shown={addReviewShown.shown} />
     </div>
   );
 }
