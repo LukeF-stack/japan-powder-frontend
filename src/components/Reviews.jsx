@@ -8,6 +8,7 @@ function Reviews(props) {
   const { id, state } = props;
   const [refresh, setRefresh] = useState({});
   const [editedReview, setEditedReview] = useState({});
+  const [editedMessage, setEditedMessage] = useState({});
   const [edit, setEdit] = useState({});
 
   const [reviewResults, setReviewResults] = useState([]);
@@ -85,14 +86,14 @@ function Reviews(props) {
   };
 
   const change = (e) => {
-    setEditedReview({ [e.target.name]: e.target.value });
-    console.log(editedReview.message);
+    setEditedMessage({ [e.target.name]: e.target.value });
+    //console.log(editedReview.message);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log(editedReview.message);
+    //console.log(editedReview.message);
     //createEditedReview();
     // setEditedReview({
     //   message: ""
@@ -127,58 +128,26 @@ function Reviews(props) {
             {review.Timestamp ? (
               <h6>{new Date(review.Timestamp).toDateString()}</h6>
             ) : null}
-            {
-              edit !== review._id ? <p>{review.Body}</p> : null
-              // <form action="">
-              //   <textarea
-              //     //maxLength="800"
-              //     name="message"
-              //     type="text"
-              //     value={editedReview.message}
-              //     //placeholder="How was your experience?"
-              //     onChange={(e) => change(e)}
-              //   />
-              // </form>
-            }
+            <p>{review.Body}</p>
             {user._id === review.User_id ? (
               <div>
-                {edit !== review._id ? (
-                  <button
-                    onClick={() => {
-                      setEdit(review._id);
-                      showEditBox(review);
-                      //setEditedReview({ message: review.Body });
-                    }}
-                  >
-                    edit
-                  </button>
-                ) : (
-                  <button
-                    onClick={(e) => {
-                      //console.log(editedReview.message);
-                      onSubmit(e);
-                    }}
-                  >
-                    submit
-                  </button>
-                )}
-                {edit !== review._id ? (
-                  <button
-                    onClick={() => {
-                      deleteReview(review._id);
-                    }}
-                  >
-                    delete
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => {
-                      setEdit({});
-                    }}
-                  >
-                    cancel
-                  </button>
-                )}
+                <button
+                  onClick={() => {
+                    setEdit(review._id);
+                    showEditBox(review);
+                    setEditedReview(review);
+                  }}
+                >
+                  edit
+                </button>
+
+                <button
+                  onClick={() => {
+                    deleteReview(review._id);
+                  }}
+                >
+                  delete
+                </button>
               </div>
             ) : null}
           </div>
@@ -220,19 +189,45 @@ function Reviews(props) {
   };
 
   return (
-    <div className="reviews-wrapper">
-      <ul>{reviewResults}</ul>
-      <div className="form small-form">
-        <form action="">
-          <textarea
-            //maxLength="800"
-            name="message"
-            type="text"
-            value={editedReview.message}
-            //placeholder="How was your experience?"
-            onChange={(e) => change(e)}
-          />
-        </form>
+    <div>
+      <div className="edit-review">
+        <h4>{editedReview.Name}</h4>
+        {editedReview.Timestamp ? (
+          <h6>{new Date(editedReview.Timestamp).toDateString()}</h6>
+        ) : null}
+        <div className="small-form">
+          <form action="">
+            <textarea
+              //maxLength="800"
+              name="message"
+              type="text"
+              value={editedMessage.message}
+              //placeholder="How was your experience?"
+              onChange={(e) => change(e)}
+            />
+          </form>
+          <div>
+            <button
+              onClick={() => {
+                console.log(editedMessage.message);
+                //setEditedReview({ message: review.Body });
+              }}
+            >
+              submit
+            </button>
+
+            <button
+              onClick={() => {
+                deleteReview(review._id);
+              }}
+            >
+              cancel
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="reviews-wrapper">
+        <ul>{reviewResults}</ul>
       </div>
     </div>
   );

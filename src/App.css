@@ -569,6 +569,19 @@ form button {
   word-wrap: break-word;
   flex-grow: 2;
   padding: 20px;
+  background-color: white;
+}
+
+.edit-review {
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  box-shadow: 0px 0px 14px 0px rgba(41, 41, 41, 0.1);
+  border-radius: 5px;
+  word-wrap: break-word;
+  z-index: 12;
+  padding: 20px;
+  background-color: white;
 }
 
 .review-result-li {
