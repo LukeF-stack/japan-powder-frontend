@@ -7,6 +7,7 @@ import DestinationResorts from "../components/DestinationResorts";
 import DestinationPhotos from "../components/DestinationPhotos";
 import DestinationReviews from "../components/DestinationReviews";
 import DestinationFlights from "../components/DestinationFlights";
+import { backendUrl } from "../components/App.jsx";
 
 function DestinationPage({ match }) {
   const [weather, setWeather] = useState({});
@@ -32,7 +33,7 @@ function DestinationPage({ match }) {
   const generatePageContent = async () => {
     try {
       const response = await fetch(
-        `https://dsbn3.sse.codesandbox.io/api/destinations/${match.params.id}`
+        `${backendUrl}/api/destinations/${match.params.id}`
       );
       const destination = await response.json();
       setDestination(destination);

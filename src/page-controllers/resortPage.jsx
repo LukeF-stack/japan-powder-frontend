@@ -6,6 +6,7 @@ import ResortInfo from "../components/ResortInfo.jsx";
 import ResortPhotos from "../components/ResortPhotos.jsx";
 import ResortReviews from "../components/ResortReviews.jsx";
 import ResortBookings from "../components/ResortBookings.jsx";
+import { backendUrl } from "../components/App.jsx";
 
 function ResortPage({ match }) {
   useEffect(() => {
@@ -16,7 +17,7 @@ function ResortPage({ match }) {
   const generatePageContent = async () => {
     try {
       const response = await fetch(
-        `https://dsbn3.sse.codesandbox.io/api/resorts/${match.params.id}`
+        `${backendUrl}/api/resorts/${match.params.id}`
       );
       const resort = await response.json();
       setResort(resort);

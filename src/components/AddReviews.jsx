@@ -4,6 +4,7 @@ import { UserContext } from "./UserContext";
 import { NotificationManager } from "react-notifications";
 import "react-notifications/lib/notifications.css";
 import Reviews from "./Reviews.jsx";
+import { backendUrl } from "./App.jsx";
 
 function AddReviews(props) {
   const { id } = props;
@@ -38,10 +39,7 @@ function AddReviews(props) {
       body: JSON.stringify(fields)
     };
     try {
-      const response = await fetch(
-        `https://dsbn3.sse.codesandbox.io/api/reviews`,
-        settings
-      );
+      const response = await fetch(`${backendUrl}/api/reviews`, settings);
       const data = await response.json();
       //console.log(data.message);
       if (!data) {

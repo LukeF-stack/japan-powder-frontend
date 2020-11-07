@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 import SignUpForm from "../components/SignUpForm";
 import { withRouter } from "react-router-dom";
+import { backendUrl } from "../components/App.jsx";
 
 class SignUpPage extends React.Component {
   redirectToHome = () => {
@@ -20,10 +21,7 @@ class SignUpPage extends React.Component {
       body: JSON.stringify(fields)
     };
     try {
-      const response = await fetch(
-        `https://dsbn3.sse.codesandbox.io/api/users`,
-        settings
-      );
+      const response = await fetch(`${backendUrl}/api/users`, settings);
       const data = await response.json();
       console.log(`${data.fullName} user created`);
     } catch (e) {

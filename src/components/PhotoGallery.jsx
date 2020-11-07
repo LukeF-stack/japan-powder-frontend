@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
+import { backendUrl } from "./App.jsx";
 
 function PhotoGallery(props) {
   const [gallery, setGallery] = useState([]);
@@ -40,9 +41,7 @@ function PhotoGallery(props) {
   const getPhotos = async (props) => {
     //console.log("id is", props.id);
     try {
-      const response = await fetch(
-        `https://dsbn3.sse.codesandbox.io/api/${props.db}/${props.id}`
-      );
+      const response = await fetch(`${backendUrl}/api/${props.db}/${props.id}`);
       const destination = await response.json();
       //setDestination(destination);
       //console.log(destination);

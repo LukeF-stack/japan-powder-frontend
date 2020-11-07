@@ -5,6 +5,7 @@ import SignInForm from "../components/SignInForm";
 import SignInUser from "../components/SignInUser";
 import { NotificationManager } from "react-notifications";
 import "react-notifications/lib/notifications.css";
+import { backendUrl } from "../components/App.jsx";
 
 class SignInPage extends React.Component {
   setUser = [];
@@ -20,10 +21,7 @@ class SignInPage extends React.Component {
       body: JSON.stringify(fields)
     };
     try {
-      const response = await fetch(
-        `https://dsbn3.sse.codesandbox.io/api/auth/login`,
-        settings
-      );
+      const response = await fetch(`${backendUrl}/api/auth/login`, settings);
       const data = await response.json();
       //console.log(data.message);
       if (!data) {

@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import "../App.css";
 import { UserContext } from "./UserContext";
 import { Link } from "react-router-dom";
+import { backendUrl } from "./App.jsx";
 
 function Favs() {
   const { user } = useContext(UserContext);
@@ -20,9 +21,7 @@ function Favs() {
     if (user.favs_destinations && user.favs_destinations.length > 0) {
       console.log("getting favs");
       try {
-        const url = new URL(
-          "https://dsbn3.sse.codesandbox.io/api/destinations"
-        );
+        const url = new URL(`${backendUrl}/api/destinations`);
         const favsIds = await user.favs_destinations;
         const params = await { ids: favsIds };
         url.search = new URLSearchParams(params).toString();

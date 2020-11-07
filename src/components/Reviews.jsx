@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import "../App.css";
 import { UserContext } from "./UserContext";
 import { NotificationManager } from "react-notifications";
+import { backendUrl } from "./App.jsx";
 
 function Reviews(props) {
   const { user } = useContext(UserContext);
@@ -27,7 +28,7 @@ function Reviews(props) {
     };
     try {
       const response = await fetch(
-        `https://dsbn3.sse.codesandbox.io/api/reviews/${review_id}`,
+        `${backendUrl}/api/reviews/${review_id}`,
         settings
       );
       const data = await response.json();
@@ -65,7 +66,7 @@ function Reviews(props) {
     };
     try {
       const response = await fetch(
-        `https://dsbn3.sse.codesandbox.io/api/reviews/${editedReview._id}`,
+        `${backendUrl}/api/reviews/${editedReview._id}`,
         settings
       );
       const data = await response.json();
@@ -102,7 +103,7 @@ function Reviews(props) {
 
   const getReviews = async () => {
     try {
-      const url = new URL(`https://dsbn3.sse.codesandbox.io/api/reviews`);
+      const url = new URL(`${backendUrl}/api/reviews`);
       const params = { Location_id: id };
 
       url.search = new URLSearchParams(params).toString();

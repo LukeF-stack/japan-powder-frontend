@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 import DestinationChild from "./DestinationChild.jsx";
 import { Link } from "react-router-dom";
+import { backendUrl } from "./App.jsx";
 
 class DestinationParent extends React.Component {
   state = {
@@ -10,9 +11,7 @@ class DestinationParent extends React.Component {
   };
   getInfo = async (value) => {
     try {
-      const response = await fetch(
-        "https://dsbn3.sse.codesandbox.io/api/destinations/" + value
-      );
+      const response = await fetch(`${backendUrl}/api/destinations/` + value);
       const data = await response.json();
       this.setState({
         destinationTitle: data.title,

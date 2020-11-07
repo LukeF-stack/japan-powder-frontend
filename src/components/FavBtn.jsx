@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import "../App.css";
 import { UserContext } from "./UserContext";
+import { backendUrl } from "./App.jsx";
 
 function FavBtn(props) {
   const { user } = useContext(UserContext);
   const favsBody = { favs_destinations: props.id };
   const addToFavs = () => {
-    fetch(`https://5sx1m.sse.codesandbox.io/api/users/${user._id}`, {
+    fetch(`${backendUrl}/api/users/${user._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(favsBody)

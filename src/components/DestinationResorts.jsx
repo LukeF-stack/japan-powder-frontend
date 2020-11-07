@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
+import { backendUrl } from "./App.jsx";
 
 class DestinationResorts extends React.Component {
   list = [];
@@ -9,7 +10,7 @@ class DestinationResorts extends React.Component {
   }
   getResorts = async (props) => {
     try {
-      const url = new URL("https://dsbn3.sse.codesandbox.io/api/resorts");
+      const url = new URL(`${backendUrl}/api/resorts`);
       const params = { destinationId: this.props.match.params.id };
       url.search = new URLSearchParams(params).toString();
       const response = await fetch(url);

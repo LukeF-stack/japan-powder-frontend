@@ -17,6 +17,8 @@ import AccountPage from "../page-controllers/accountPage";
 //import SetUserContext from "./User";
 import { User } from "./User";
 
+export const backendUrl = "https://powder-japan-api.herokuapp.com";
+
 //import { useHistory } from "react-router-dom";
 //import DestinationInfo from "./DestinationInfo";
 
@@ -27,7 +29,7 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      fetch("https://dsbn3.sse.codesandbox.io/api/auth/validate", {
+      fetch(`${backendUrl}/api/auth/validate`, {
         headers: { Authorization: `Bearer ${localStorage.token}` }
       })
         .then((res) => {
