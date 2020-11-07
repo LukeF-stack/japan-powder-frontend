@@ -7,7 +7,7 @@ function Reviews(props) {
   const { user } = useContext(UserContext);
   const { id, state } = props;
   const [refresh, setRefresh] = useState({});
-  const [editedReview, setEditedReview] = useState({});
+  const [editedReview, setEditedReview] = useState(null);
   const [editedMessage, setEditedMessage] = useState({});
   const [edit, setEdit] = useState({});
 
@@ -44,45 +44,45 @@ function Reviews(props) {
   };
 
   const createEditedReview = async () => {
-    //console.log(editedReview.message);
-    // const stamp = Date.now();
-    // const fields = {
-    //   Location_id: id,
-    //   Name: user.fullName,
-    //   Body: review.message,
-    //   User_id: user._id,
-    //   Timestamp: stamp
-    // };
-    // //console.log(fields);
-    // const settings = {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify(fields)
-    // };
-    // try {
-    //   const response = await fetch(
-    //     `https://dsbn3.sse.codesandbox.io/api/reviews`,
-    //     settings
-    //   );
-    //   const data = await response.json();
-    //   //console.log(data.message);
-    //   if (!data) {
-    //     console.log("problem creating review");
-    //   } else if (data.msg) {
-    //     NotificationManager.error(data.msg);
-    //   } else {
-    //     //console.log("data is ", data);
-    //     NotificationManager.success(`Review successfully added`);
-    //     setShown(false);
-    //     setState(data);
-    //   }
-    // } catch (e) {
-    //   console.log(e.message);
-    //   //NotificationManager.error("Problem signing in user", "", 2000);
-    // }
+    //console.log(editedMessage.message);
+    //console.log(editedReview);
+    const stamp = Date.now();
+    const fields = {
+      Location_id: editedReview.Location_id,
+      Name: user.fullName,
+      Body: editedMessage.message,
+      User_id: user._id,
+      Timestamp: stamp
+    };
+    //console.log(fields);
+    const settings = {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(fields)
+    };
+    try {
+      const response = await fetch(
+        `https://dsbn3.sse.codesandbox.io/api/reviews/${editedReview._id}`,
+        settings
+      );
+      const data = await response.json();
+      //console.log(data.message);
+      if (!data) {
+        console.log("problem updating review");
+      } else if (data.msg) {
+        NotificationManager.error(data.msg);
+      } else {
+        NotificationManager.success(`Review successfully updated`);
+        setEditedReview(null);
+        setRefresh(data);
+      }
+    } catch (e) {
+      console.log(e.message);
+      //NotificationManager.error("Problem signing in user", "", 2000);
+    }
   };
 
   const change = (e) => {
@@ -93,8 +93,8 @@ function Reviews(props) {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    //console.log(editedReview.message);
-    //createEditedReview();
+    //console.log(editedMessage.message);
+    createEditedReview();
     // setEditedReview({
     //   message: ""
     // });
@@ -134,7 +134,6 @@ function Reviews(props) {
                 <button
                   onClick={() => {
                     setEdit(review._id);
-                    showEditBox(review);
                     setEditedReview(review);
                   }}
                 >
@@ -157,75 +156,48 @@ function Reviews(props) {
     setReviewResults(reviews.reverse());
   };
 
-  const [editBox, setEditBox] = useState([]);
-
-  const showEditBox = (review) => {
-    console.log(review);
-    const object = [];
-    // object.push(
-    // <form action="">
-    //   <textarea
-    //     //maxLength="800"
-    //     name="message"
-    //     type="text"
-    //     value={editedReview.message}
-    //     //placeholder="How was your experience?"
-    //     onChange={(e) => change(e)}
-    //   />
-    // </form>
-    // );
-    setEditBox(
-      <form action="">
-        <textarea
-          //maxLength="800"
-          name="message"
-          type="text"
-          value={editedReview.message}
-          //placeholder="How was your experience?"
-          onChange={(e) => change(e)}
-        />
-      </form>
-    );
-  };
-
   return (
     <div>
-      <div className="edit-review">
-        <h4>{editedReview.Name}</h4>
-        {editedReview.Timestamp ? (
-          <h6>{new Date(editedReview.Timestamp).toDateString()}</h6>
-        ) : null}
-        <div className="small-form">
-          <form action="">
-            <textarea
-              //maxLength="800"
-              name="message"
-              type="text"
-              value={editedMessage.message}
-              //placeholder="How was your experience?"
-              onChange={(e) => change(e)}
-            />
-          </form>
-          <div>
-            <button
-              onClick={() => {
-                console.log(editedMessage.message);
-                //setEditedReview({ message: review.Body });
-              }}
-            >
-              submit
-            </button>
+      {editedReview ? <div className="gallery-modal"></div> : null}
+      {editedReview ? (
+        <div className="edit-review">
+          <h4>{editedReview.Name}</h4>
+          {editedReview.Timestamp ? (
+            <h6>{new Date(editedReview.Timestamp).toDateString()}</h6>
+          ) : null}
+          <div className="small-form">
+            <form action="">
+              <textarea
+                //maxLength="800"
+                name="message"
+                type="text"
+                value={editedMessage.message}
+                placeholder={editedReview.Body}
+                onChange={(e) => change(e)}
+              />
+            </form>
+            <div>
+              <button
+                onClick={(e) => {
+                  onSubmit(e);
+                  //console.log(editedMessage.message);
+                  //setEditedReview({ message: review.Body });
+                }}
+              >
+                submit
+              </button>
 
-            <button
-              onClick={() => {
-                deleteReview(review._id);
-              }}
-            >
-              cancel
-            </button>
+              <button
+                onClick={() => {
+                  setEditedReview(null);
+                }}
+              >
+                cancel
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      ) : null}
       <div className="reviews-wrapper">
         <ul>{reviewResults}</ul>
       </div>
