@@ -8,7 +8,7 @@ function Reviews(props) {
   const { id, state } = props;
   const [refresh, setRefresh] = useState({});
   const [editedReview, setEditedReview] = useState({});
-  const [edit, setEdit] = useState(false);
+  const [edit, setEdit] = useState({});
 
   const [reviewResults, setReviewResults] = useState([]);
 
@@ -85,16 +85,18 @@ function Reviews(props) {
   };
 
   const change = (e) => {
-    setEditedReview({
-      [e.target.name]: e.target.value
-    });
+    setEditedReview({ [e.target.name]: e.target.value });
+    console.log(editedReview.message);
   };
+
   const onSubmit = (e) => {
     e.preventDefault();
-    createEditedReview();
-    setEditedReview({
-      message: ""
-    });
+
+    console.log(editedReview.message);
+    //createEditedReview();
+    // setEditedReview({
+    //   message: ""
+    // });
   };
 
   const getReviews = async () => {
@@ -108,76 +110,130 @@ function Reviews(props) {
       const results = await response.json();
       //setDestination(destination);
       //console.log(destination);
-      const reviews = [];
-      results.forEach((review) => {
-        //console.log(review);
-        reviews.push(
-          <li key={review._id} className="review-result-li">
-            <div className="review-result">
-              <h4>{review.Name}</h4>
-              {review.Timestamp ? (
-                <h6>{new Date(review.Timestamp).toDateString()}</h6>
-              ) : null}
-              {!edit ? (
-                <p>{review.Body}</p>
-              ) : (
-                <form action="">
-                  <textarea
-                    maxLength="800"
-                    name="message"
-                    type="text"
-                    value={editedReview.message}
-                    onChange={(e) => change(e)}
-                  />
-                </form>
-              )}
-              {user._id === review.User_id ? (
-                <div>
-                  {!edit ? (
-                    <button
-                      onClick={() => {
-                        //setEdit(true);
-                        //setEditedReview({ message: review.Body });
-                      }}
-                    >
-                      edit
-                    </button>
-                  ) : (
-                    <button
-                      onClick={(e) => {
-                        //console.log(editedReview.message);
-                        onSubmit(e);
-                      }}
-                    >
-                      submit
-                    </button>
-                  )}
-                  {!edit ? (
-                    <button
-                      onClick={() => {
-                        deleteReview(review._id);
-                      }}
-                    >
-                      delete
-                    </button>
-                  ) : (
-                    <button>cancel</button>
-                  )}
-                </div>
-              ) : null}
-            </div>
-          </li>
-        );
-      });
-      setReviewResults(reviews.reverse());
+      generateReviewsList(results);
     } catch (e) {
       console.log(e.message);
     }
   };
 
+  const generateReviewsList = (results) => {
+    const reviews = [];
+    results.forEach((review) => {
+      //console.log(review);
+      reviews.push(
+        <li key={review._id} className="review-result-li">
+          <div className="review-result">
+            <h4>{review.Name}</h4>
+            {review.Timestamp ? (
+              <h6>{new Date(review.Timestamp).toDateString()}</h6>
+            ) : null}
+            {
+              edit !== review._id ? <p>{review.Body}</p> : null
+              // <form action="">
+              //   <textarea
+              //     //maxLength="800"
+              //     name="message"
+              //     type="text"
+              //     value={editedReview.message}
+              //     //placeholder="How was your experience?"
+              //     onChange={(e) => change(e)}
+              //   />
+              // </form>
+            }
+            {user._id === review.User_id ? (
+              <div>
+                {edit !== review._id ? (
+                  <button
+                    onClick={() => {
+                      setEdit(review._id);
+                      showEditBox(review);
+                      //setEditedReview({ message: review.Body });
+                    }}
+                  >
+                    edit
+                  </button>
+                ) : (
+                  <button
+                    onClick={(e) => {
+                      //console.log(editedReview.message);
+                      onSubmit(e);
+                    }}
+                  >
+                    submit
+                  </button>
+                )}
+                {edit !== review._id ? (
+                  <button
+                    onClick={() => {
+                      deleteReview(review._id);
+                    }}
+                  >
+                    delete
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      setEdit({});
+                    }}
+                  >
+                    cancel
+                  </button>
+                )}
+              </div>
+            ) : null}
+          </div>
+        </li>
+      );
+    });
+    setReviewResults(reviews.reverse());
+  };
+
+  const [editBox, setEditBox] = useState([]);
+
+  const showEditBox = (review) => {
+    console.log(review);
+    const object = [];
+    // object.push(
+    // <form action="">
+    //   <textarea
+    //     //maxLength="800"
+    //     name="message"
+    //     type="text"
+    //     value={editedReview.message}
+    //     //placeholder="How was your experience?"
+    //     onChange={(e) => change(e)}
+    //   />
+    // </form>
+    // );
+    setEditBox(
+      <form action="">
+        <textarea
+          //maxLength="800"
+          name="message"
+          type="text"
+          value={editedReview.message}
+          //placeholder="How was your experience?"
+          onChange={(e) => change(e)}
+        />
+      </form>
+    );
+  };
+
   return (
     <div className="reviews-wrapper">
       <ul>{reviewResults}</ul>
+      <div className="form small-form">
+        <form action="">
+          <textarea
+            //maxLength="800"
+            name="message"
+            type="text"
+            value={editedReview.message}
+            //placeholder="How was your experience?"
+            onChange={(e) => change(e)}
+          />
+        </form>
+      </div>
     </div>
   );
 }

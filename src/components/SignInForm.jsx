@@ -13,6 +13,7 @@ class SignInForm extends React.Component {
   };
   onSubmit = (e) => {
     e.preventDefault();
+    //console.log(this.state.email);
     this.props.onSignIn(this.state);
     this.setState({
       email: "",
@@ -26,6 +27,7 @@ class SignInForm extends React.Component {
         <form action="">
           <input
             name="email"
+            //type="email"
             value={this.state.email}
             placeholder="Email"
             onChange={(e) => this.change(e)}
