@@ -20,9 +20,9 @@ class ResortNavTabs extends React.Component {
           <Link to={this.reviewsLink}>
             <li>Reviews</li>
           </Link>
-          <Link to={this.bookingsLink}>
+          {/* <Link to={this.bookingsLink}>
             <li>Bookings</li>
-          </Link>
+          </Link> */}
         </ul>
       </div>
     );

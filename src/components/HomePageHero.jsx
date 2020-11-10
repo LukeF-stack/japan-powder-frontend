@@ -9,6 +9,12 @@ class HomePageHero extends React.Component {
       <div>
         <section className="homePage-hero">
           <div className="hero-background">
+            <div className="explore-div">
+              <h6>Explore Destinations</h6>
+              <a href="#map">
+                <img src="/images/down_arrow.svg" alt="down arrow" />
+              </a>
+            </div>
             <div className="hero-parallax-wrapper-slow">
               <Parallax speed={-8}>
                 <h1 className="homePage-hero-title">POWDER</h1>
@@ -18,7 +24,6 @@ class HomePageHero extends React.Component {
               </Parallax>
             </div>
           </div>
-
           <div className="hero-parallax-wrapper-fast">
             <Parallax speed={4} percentage={0.6}>
               <div className="hero-overlay"></div>

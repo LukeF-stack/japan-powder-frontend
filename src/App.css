@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -223,6 +224,7 @@ section {
   grid-row: 4;
   color: #940000;
   transition: all ease 0.3s;
+  z-index: 3;
 }
 
 .destination-bio a:hover {
@@ -370,6 +372,11 @@ nav ul {
   color: #202020;
   transition: all ease 0.2s;
   font-weight: 400;
+  margin: auto;
+}
+
+.nav-links a {
+  display: flex;
 }
 
 .nav-links li:hover {
@@ -495,7 +502,7 @@ input {
   display: grid;
   /* grid-template-rows: 60px auto 2fr; */
   grid-template-columns: 23% 1fr 23%;
-  height: 60%;
+  height: 70%;
 }
 
 /* .hero-parallax-wrapper-fast div {
@@ -512,9 +519,36 @@ input {
 
 .section-title {
   text-align: center;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   color: rgb(165, 165, 165);
 }
+
+.explore-div {
+  grid-row: 3;
+  grid-column: 2;
+  margin: auto;
+  margin-left: 10vw;
+
+  z-index: 1;
+}
+
+.explore-div img:hover {
+  transform: translateY(20px);
+}
+
+.explore-div img {
+  width: 1vw;
+  height: 2vh;
+  margin: auto;
+  display: block;
+  transition: all ease 0.3s;
+}
+
+.explore-div h6 {
+  font-weight: 600;
+  color: #940000;
+}
+
 .nav-tabs {
   display: flex;
   justify-content: space-around;
