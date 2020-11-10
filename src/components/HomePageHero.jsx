@@ -12,13 +12,15 @@ class HomePageHero extends React.Component {
             <div className="hero-parallax-wrapper-slow">
               <Parallax speed={-8}>
                 <h1 className="homePage-hero-title">POWDER</h1>
+              </Parallax>
+              <Parallax speed={-4}>
                 <h6 className="homePage-hero-subtitle">JAPAN</h6>
               </Parallax>
             </div>
           </div>
 
           <div className="hero-parallax-wrapper-fast">
-            <Parallax speed={3}>
+            <Parallax speed={4} percentage="0.6">
               <div className="hero-overlay"></div>
             </Parallax>
           </div>
