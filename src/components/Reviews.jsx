@@ -16,6 +16,7 @@ function Reviews(props) {
 
   useEffect(() => {
     getReviews();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, state, refresh, edit]);
 
   const deleteReview = async (review_id) => {

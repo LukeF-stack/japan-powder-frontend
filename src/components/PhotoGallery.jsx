@@ -11,6 +11,7 @@ function PhotoGallery(props) {
   useEffect(() => {
     //console.log(props);
     getPhotos(props);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const showModal = (photo) => {

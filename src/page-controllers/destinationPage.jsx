@@ -28,6 +28,7 @@ function DestinationPage({ match }) {
         "https://community-open-weather-map.p.rapidapi.com/forecast/daily"
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theDestination]);
 
   const generatePageContent = async () => {
