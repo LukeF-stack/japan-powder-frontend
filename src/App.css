@@ -693,31 +693,32 @@ form button {
 @media only screen and (max-width: 896px) {
   .map-btn-wrapper {
     min-width: unset;
+    width: 100%;
   }
   #hakuba_valley {
-    top: 23vmin;
-    left: -2vmin;
+    top: 24vmin;
+    left: 4vmin;
     margin: auto;
     right: 0;
     bottom: 0;
   }
   #shiga_kogen {
     top: 15vmin;
-    left: 5vw;
+    left: 15vw;
     margin: auto;
     right: 0;
     bottom: 0;
   }
   #rusutsu {
     top: 0;
-    left: 13vw;
+    left: 32vw;
     margin: auto;
     right: 0;
     bottom: 45vmin;
   }
   #niseko {
     top: 0;
-    left: 17vw;
+    left: 39vw;
     margin: auto;
     right: 0;
     bottom: 47vmin;
