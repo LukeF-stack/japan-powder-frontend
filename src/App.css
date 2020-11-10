@@ -191,7 +191,7 @@ section {
   width: 80%;
   margin: 30px 0 auto;
   grid-row: 3;
-  font-size: 0.8vw;
+  font-size: calc(12px + 0.3vw);
 }
 
 .destination-bio a {
@@ -638,8 +638,41 @@ form button {
   margin: 20px;
 }
 
-@media only screen and (min-width: 1280px) {
+/* @media only screen and (min-width: 1280px) {
   .destination-bio p {
     font-size: 0.7vw;
+  }
+} */
+
+@media only screen and (max-width: 1536px) {
+  .map-buttons {
+    grid-column: 1;
+    grid-row-start: 3;
+    grid-row-end: 6;
+  }
+  .map-btn-wrapper {
+    height: 95%;
+    min-width: unset;
+  }
+  .destination-bio a {
+    margin: 0 auto;
+    grid-column: 1;
+    display: -webkit-box;
+    width: 60%;
+  }
+  .destination-bio p {
+    margin: 20px auto;
+    grid-column: 1;
+    display: block;
+    height: fit-content;
+    width: 60%;
+  }
+  .map-title {
+    margin: auto;
+    grid-column: 1;
+  }
+  .destination-bio {
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 10% auto 10% 1fr;
   }
 }
