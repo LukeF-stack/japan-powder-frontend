@@ -453,11 +453,21 @@ form button {
   grid-row: 2;
 }
 
-.hero-parallax-wrapper-fast {
+.hero-parallax-wrapper-fast,
+.hero-background {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 4;
+}
+
+.hero-background {
+  overflow: hidden;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 60px auto 2fr;
+  grid-template-columns: 23% 1fr 23%;
+  height: 60%;
 }
 
 /* .hero-parallax-wrapper-fast div {
