@@ -53,6 +53,7 @@ section {
   height: 100%;
   position: absolute;
   top: 0;
+  filter: blur(0.5px);
 }
 
 .grid-container {
