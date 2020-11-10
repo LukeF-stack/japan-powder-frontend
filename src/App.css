@@ -412,8 +412,7 @@ input {
 }
 
 .homePage-hero {
-  /* background-color: rgb(241, 241, 241);*/
-  background-image: url("./images/hero_test_back.png");
+  background-image: url("./images/hero_test_back_reupload.png");
   background-size: cover;
   height: 100vh;
   width: 100%;
