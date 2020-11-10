@@ -13,7 +13,7 @@ class HomePageHero extends React.Component {
               <Parallax speed={-3}>
                 <h6>Explore Destinations</h6>
                 <a href="#map">
-                  <img src="/images/down_arrow.svg" alt="down arrow" />
+                  <img src="/public/images/down_arrow.svg" alt="down arrow" />
                 </a>
               </Parallax>
             </div>

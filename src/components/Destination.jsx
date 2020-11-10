@@ -43,7 +43,7 @@ class DestinationParent extends React.Component {
         </h6>
         <div className="map-buttons">
           <div className="map-img">
-            <img src="/images/japan_islands.svg" alt="map of japan" />
+            <img src="/public/images/japan_islands.svg" alt="map of japan" />
           </div>
           <div className="map-btn-wrapper">
             <div className="map-btn-container">

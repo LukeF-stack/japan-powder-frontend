@@ -103,7 +103,7 @@ function PhotoGallery(props) {
                 previousPhoto();
               }}
             >
-              <img src="/images/arrow_left.svg" alt="right arrow" />
+              <img src="/public/images/arrow_left.svg" alt="right arrow" />
             </div>
           ) : null}
           <img
@@ -118,7 +118,7 @@ function PhotoGallery(props) {
               nextPhoto();
             }}
           >
-            <img src="/images/arrow_right.svg" alt="right arrow" />
+            <img src="/public/images/arrow_right.svg" alt="right arrow" />
           </div>
         </div>
       ) : null}

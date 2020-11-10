@@ -413,7 +413,7 @@ input {
 
 .homePage-hero {
   /* background-color: rgb(241, 241, 241);*/
-  background-image: url("./images/hero_test_back.png");
+  background-image: url("./public/images/hero_test_back.png");
   background-size: cover;
   height: 100vh;
   width: 100%;
@@ -423,7 +423,7 @@ input {
 }
 
 .hero-overlay {
-  background-image: url("./images/hero_test_front_4.png");
+  background-image: url("./public/images/hero_test_front_4.png");
   background-size: cover;
   height: 100vh;
   width: 100%;
@@ -474,7 +474,7 @@ input {
   width: 100%;
   /* display: grid;
   grid-template-rows: 200px 1fr; */
-  background-image: url("./images/japan_background.svg");
+  background-image: url("./public/images/japan_background.svg");
   background-color: #fffffd;
   background-position: top;
   background-repeat: no-repeat;
