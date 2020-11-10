@@ -23,7 +23,7 @@ class SignInForm extends React.Component {
   render() {
     return (
       <div className="form">
-        <h1 className="page-title">Sign In</h1>
+        <h1 className="page-title">SIGN IN</h1>
         <form action="">
           <input
             name="email"

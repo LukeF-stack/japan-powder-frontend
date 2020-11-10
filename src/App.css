@@ -21,6 +21,27 @@ h6 {
   font-family: "Mulish", sans-serif;
 }
 
+button {
+  background-color: #940000;
+}
+
+button:focus {
+  border-color: white;
+  box-shadow: none;
+}
+
+input {
+  transition: all ease 0.3s;
+}
+
+input:focus,
+input:hover {
+  background-color: none;
+  border: #a9c2c7 1px solid !important;
+
+  box-shadow: none;
+}
+
 section {
   height: 100vh;
   min-height: 40vw;
@@ -342,7 +363,7 @@ nav ul {
   display: flex;
   justify-content: space-around;
   padding: 0;
-  width: 45vw;
+  width: 30vw;
 }
 
 .nav-links li {
@@ -363,6 +384,7 @@ ul {
   margin: 20vh auto;
   width: 40vw;
   max-width: 500px;
+  min-width: 300px;
 }
 .form-small {
   margin: 20px auto;
@@ -370,6 +392,10 @@ ul {
 
 form button {
   width: 100%;
+}
+
+input {
+  margin: 30px 0;
 }
 
 .review-toggle-button {
@@ -428,7 +454,7 @@ form button {
   color: #940000;
   /* grid-row: 3;
   grid-column: 2; */
-  font-size: 1.5vw;
+  font-size: calc(16px + 1vw);
   font-weight: 600;
   text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.192);
   display: inline-block;
@@ -467,7 +493,7 @@ form button {
   overflow: hidden;
   width: 100%;
   display: grid;
-  grid-template-rows: 60px auto 2fr;
+  /* grid-template-rows: 60px auto 2fr; */
   grid-template-columns: 23% 1fr 23%;
   height: 60%;
 }

@@ -24,7 +24,7 @@ class SignUpForm extends React.Component {
   render() {
     return (
       <div className="form">
-        <h1 className="page-title">Create Account</h1>
+        <h1 className="page-title">SIGN UP</h1>
         <form action="">
           <input
             name="fullName"

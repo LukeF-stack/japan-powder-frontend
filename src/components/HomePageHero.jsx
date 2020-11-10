@@ -20,7 +20,7 @@ class HomePageHero extends React.Component {
           </div>
 
           <div className="hero-parallax-wrapper-fast">
-            <Parallax speed={4} percentage="0.6">
+            <Parallax speed={4} percentage={0.6}>
               <div className="hero-overlay"></div>
             </Parallax>
           </div>
