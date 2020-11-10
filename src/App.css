@@ -376,7 +376,7 @@ form button {
 }
 
 .homePage-hero {
-  background-color: rgb(241, 241, 241);
+  /* background-color: rgb(241, 241, 241);*/
   background-image: url("./images/hero_test_back.png");
   background-size: cover;
   height: 100vh;
@@ -396,28 +396,41 @@ form button {
   grid-column: span 3;
 }
 
+.react-parallax-bgimage {
+  z-index: 3;
+  width: 100vw !important;
+  height: auto !important;
+  transition: transform ease-out 0.3s;
+  top: calc(30vw / 2);
+}
+
 .homePage-hero-title {
   margin: 0;
   color: #202020;
   margin-top: 9vh;
-  grid-row: 2;
-  grid-column: 2;
+  /* grid-row: 2;
+  grid-column: 2; */
   font-size: 11vw;
   text-align: center;
   font-weight: 700;
   text-shadow: 7px 7px 10px rgba(0, 0, 0, 0.34);
   display: inline-block;
+  /* top: 20%;
+  position: absolute;
+  left: 0;
+  right: 0; */
 }
 
 .homePage-hero-subtitle {
   margin: 0 0 0 20%;
   color: #940000;
-  grid-row: 3;
-  grid-column: 2;
+  /* grid-row: 3;
+  grid-column: 2; */
   font-size: 1.5vw;
   font-weight: 600;
   text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.192);
   display: inline-block;
+  height: fit-content;
 }
 
 .homePage-map {
@@ -434,6 +447,25 @@ form button {
   z-index: 1;
   padding: 0;
 }
+
+.hero-parallax-wrapper-slow {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.hero-parallax-wrapper-fast {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+/* .hero-parallax-wrapper-fast div {
+  transition: all ease 0.4s;
+}
+.hero-parallax-wrapper-slow div {
+  transition: all ease 0.2s;
+} */
 
 .page-title {
   text-align: center;
