@@ -10,19 +10,16 @@ class HomePageHero extends React.Component {
         <section className="homePage-hero">
           <div className="hero-background">
             <div className="explore-div">
-              <Parallax speed={-3}>
-                <h6>Explore Destinations</h6>
-                <a href="#map">
-                  <img src="/images/down_arrow.svg" alt="down arrow" />
-                </a>
-              </Parallax>
+              <h6>Explore Destinations</h6>
+              <a href="#map">
+                <img src="/images/down_arrow.svg" alt="down arrow" />
+              </a>
             </div>
 
             <div className="hero-parallax-wrapper-slow">
               <Parallax speed={-8}>
                 <h1 className="homePage-hero-title">POWDER</h1>
-              </Parallax>
-              <Parallax speed={-4}>
+
                 <h6 className="homePage-hero-subtitle">JAPAN</h6>
               </Parallax>
             </div>

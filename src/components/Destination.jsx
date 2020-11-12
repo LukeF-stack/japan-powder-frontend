@@ -3,7 +3,7 @@ import "../App.css";
 import DestinationChild from "./DestinationChild.jsx";
 import { Link } from "react-router-dom";
 import { backendUrl } from "./App.jsx";
-import { SwitchTransition, Transition } from "react-transition-group";
+import { Transition } from "react-transition-group";
 import {
   defaultStyle,
   transitionStyles

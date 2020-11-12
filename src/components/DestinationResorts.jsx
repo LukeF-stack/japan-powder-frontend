@@ -2,10 +2,22 @@ import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 import { backendUrl } from "./App.jsx";
+import { Transition } from "react-transition-group";
+import {
+  defaultStyle,
+  transitionStyles
+} from "./../components/transitionStyles.js";
 
 class DestinationResorts extends React.Component {
+  state = {
+    inProp: false
+  };
+
   list = [];
   componentDidMount() {
+    setTimeout(() => {
+      this.setState({ inProp: true });
+    }, 500);
     this.getResorts();
   }
   getResorts = async (props) => {
@@ -40,10 +52,17 @@ class DestinationResorts extends React.Component {
   };
   render() {
     return (
-      <div className="destination-resorts">
-        <h1 className="section-title">Resorts</h1>
-        <ul className="resorts-results">{this.list}</ul>
-      </div>
+      <Transition in={this.state.inProp} timeout={500}>
+        {(state) => (
+          <div
+            className="destination-resorts"
+            style={{ ...defaultStyle, ...transitionStyles[state] }}
+          >
+            <h1 className="section-title">Resorts</h1>
+            <ul className="resorts-results">{this.list}</ul>
+          </div>
+        )}
+      </Transition>
     );
   }
 }
