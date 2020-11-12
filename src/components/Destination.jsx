@@ -37,7 +37,7 @@ class DestinationParent extends React.Component {
   };
   render() {
     return (
-      <Transition timeout={300} in={this.state.bool}>
+      <Transition timeout={200} in={this.state.bool}>
         {(state) => (
           <div
             className="destination-bio"
