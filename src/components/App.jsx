@@ -5,17 +5,19 @@ import Nav from "./Nav";
 import HomePage from "../page-controllers/homePage";
 import DestinationsPage from "../page-controllers/destinationsPage";
 import DestinationPage from "../page-controllers/destinationPage";
-import AboutPage from "../page-controllers/aboutPage";
-import ContactPage from "../page-controllers/contactPage";
+//import AboutPage from "../page-controllers/aboutPage";
+//import ContactPage from "../page-controllers/contactPage";
 import ResortPage from "../page-controllers/resortPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { UserContext } from "./UserContext";
 import SignUpPage from "../page-controllers/signupPage";
 import SignInPage from "../page-controllers/signinPage";
 import AccountPage from "../page-controllers/accountPage";
+import { Transition } from "react-transition-group";
 //import SetUser from "./SetUser";
 //import SetUserContext from "./User";
 import { User } from "./User";
+import { defaultStyle, transitionStyles } from "./transitionStyles.js";
 
 export const backendUrl = "https://powder-japan-api.herokuapp.com";
 
@@ -63,29 +65,52 @@ function App() {
     }
   }, []);
 
+  const [inProp, setInProp] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setInProp(true);
+    }, 500);
+  }, []);
+
   return (
     <Router>
-      <div className="App">
-        <UserContext.Provider value={providerUser}>
-          <Nav />
-          <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/destinations" exact component={DestinationsPage} />
-            <Route path="/about" exact component={AboutPage} />
-            <Route path="/contact" exact component={ContactPage} />
-            <Route path="/destinations/:id" component={DestinationPage} />
-            <Route path="/resorts/:id" component={ResortPage} />
-            <Route path="/signup" exact component={SignUpPage} />
-            <Route path="/signin" exact component={SignInPage} />
-            {user.authenticated ? (
-              <Route path="/account" exact component={AccountPage} />
-            ) : null}
-          </Switch>
-          <NotificationContainer />
-        </UserContext.Provider>
-      </div>
+      <Transition in={inProp} timeout={0} appear={true}>
+        {(state) => (
+          <div
+            className="App"
+            style={{ ...defaultStyle, ...transitionStyles[state] }}
+          >
+            <UserContext.Provider value={providerUser}>
+              <Nav />
+              <Switch>
+                <Route
+                  path="/"
+                  exact
+                  component={HomePage}
+                  onChange={() => {
+                    console.log("change");
+                  }}
+                />
+                <Route
+                  path="/destinations"
+                  exact
+                  component={DestinationsPage}
+                />
+                <Route path="/destinations/:id" component={DestinationPage} />
+                <Route path="/resorts/:id" component={ResortPage} />
+                <Route path="/signup" exact component={SignUpPage} />
+                <Route path="/signin" exact component={SignInPage} />
+                {user.authenticated ? (
+                  <Route path="/account" exact component={AccountPage} />
+                ) : null}
+              </Switch>
+              <NotificationContainer />
+            </UserContext.Provider>
+          </div>
+        )}
+      </Transition>
     </Router>
   );
 }
-
 export default App;
