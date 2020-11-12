@@ -18,6 +18,7 @@ import { Transition } from "react-transition-group";
 //import SetUserContext from "./User";
 import { User } from "./User";
 import { defaultStyle, transitionStyles } from "./transitionStyles.js";
+import ErrorPage from "../page-controllers/404page";
 
 export const backendUrl = "https://powder-japan-api.herokuapp.com";
 
@@ -104,6 +105,7 @@ function App() {
                 {user.authenticated ? (
                   <Route path="/account" exact component={AccountPage} />
                 ) : null}
+                <ErrorPage />
               </Switch>
               <NotificationContainer />
             </UserContext.Provider>
