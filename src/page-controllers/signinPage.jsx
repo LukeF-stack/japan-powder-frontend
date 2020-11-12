@@ -6,8 +6,23 @@ import SignInUser from "../components/SignInUser";
 import { NotificationManager } from "react-notifications";
 import "react-notifications/lib/notifications.css";
 import { backendUrl } from "../components/App.jsx";
+import { Transition } from "react-transition-group";
+import {
+  defaultStyle,
+  transitionStyles
+} from "./../components/transitionStyles.js";
 
 class SignInPage extends React.Component {
+  state = {
+    inProp: false
+  };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ inProp: true });
+    }, 500);
+  }
+
   setUser = [];
   onSignIn = async (fields) => {
     //console.log("signupPage got", fields);
@@ -45,10 +60,14 @@ class SignInPage extends React.Component {
   render() {
     //const user = this.state;
     return (
-      <div>
-        <SignInForm onSignIn={(fields) => this.onSignIn(fields)} />
-        <div>{this.setUser}</div>
-      </div>
+      <Transition in={this.state.inProp} timeout={500}>
+        {(state) => (
+          <div style={{ ...defaultStyle, ...transitionStyles[state] }}>
+            <SignInForm onSignIn={(fields) => this.onSignIn(fields)} />
+            <div>{this.setUser}</div>
+          </div>
+        )}
+      </Transition>
     );
   }
 }

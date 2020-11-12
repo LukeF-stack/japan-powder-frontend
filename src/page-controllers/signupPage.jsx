@@ -3,8 +3,22 @@ import "../App.css";
 import SignUpForm from "../components/SignUpForm";
 import { withRouter } from "react-router-dom";
 import { backendUrl } from "../components/App.jsx";
+import { Transition } from "react-transition-group";
+import {
+  defaultStyle,
+  transitionStyles
+} from "./../components/transitionStyles.js";
 
 class SignUpPage extends React.Component {
+  state = {
+    inProp: false
+  };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ inProp: true });
+    }, 500);
+  }
   redirectToHome = () => {
     const { history } = this.props;
     if (history) history.push("/signin");
@@ -32,9 +46,13 @@ class SignUpPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <SignUpForm onSignUp={(fields) => this.onSignUp(fields)} />
-      </div>
+      <Transition in={this.state.inProp} timeout={500}>
+        {(state) => (
+          <div style={{ ...defaultStyle, ...transitionStyles[state] }}>
+            <SignUpForm onSignUp={(fields) => this.onSignUp(fields)} />
+          </div>
+        )}
+      </Transition>
     );
   }
 }

@@ -8,11 +8,33 @@ import DestinationPhotos from "../components/DestinationPhotos";
 import DestinationReviews from "../components/DestinationReviews";
 import DestinationFlights from "../components/DestinationFlights";
 import { backendUrl } from "../components/App.jsx";
+import { Transition } from "react-transition-group";
 
 function DestinationPage({ match }) {
   const [weather, setWeather] = useState({});
   const [forecast, setForecast] = useState([]);
   const [theDestination, setDestination] = useState(null);
+
+  const [inProp, setInProp] = useState(false);
+
+  const defaultStyle = {
+    transition: `opacity 0.5s ease-in-out`,
+    opacity: 0
+  };
+
+  const transitionStyles = {
+    entering: { opacity: 1 },
+    entered: { opacity: 1 },
+    exiting: { opacity: 0 },
+    exited: { opacity: 0 }
+  };
+
+  useEffect(() => {
+    //setInProp(false);
+    setTimeout(() => {
+      setInProp(true);
+    }, 300);
+  }, []);
 
   useEffect(() => {
     generatePageContent();
@@ -140,37 +162,44 @@ function DestinationPage({ match }) {
     }
   };
   return (
-    <div className="destination-page">
-      {theDestination !== null ? (
-        <h1 className="page-title">{theDestination.title.toUpperCase()}</h1>
-      ) : null}
-      <DestinationNavTabs match={match} />
-      <Switch>
-        <Route path="/destinations/:id/info">
+    <Transition in={inProp} timeout={300}>
+      {(state) => (
+        <div
+          className="destination-page"
+          style={{ ...defaultStyle, ...transitionStyles[state] }}
+        >
           {theDestination !== null ? (
-            <DestinationInfo
-              description={theDestination.description}
-              island={theDestination.island}
-              //open_weather_id={destination.open_weather_location_id}
-              currentWeather={weather}
-              forecast={forecast}
-            />
+            <h1 className="page-title">{theDestination.title.toUpperCase()}</h1>
           ) : null}
-        </Route>
-        <Route exact path="/destinations/:id/resorts">
-          <DestinationResorts match={match} />
-        </Route>
-        <Route exact path="/destinations/:id/photos">
-          <DestinationPhotos match={match} />
-        </Route>
-        <Route exact path="/destinations/:id/reviews">
-          <DestinationReviews match={match} />
-        </Route>
-        <Route exact path="/destinations/:id/flights">
-          <DestinationFlights />
-        </Route>
-      </Switch>
-    </div>
+          <DestinationNavTabs match={match} />
+          <Switch>
+            <Route path="/destinations/:id/info">
+              {theDestination !== null ? (
+                <DestinationInfo
+                  description={theDestination.description}
+                  island={theDestination.island}
+                  //open_weather_id={destination.open_weather_location_id}
+                  currentWeather={weather}
+                  forecast={forecast}
+                />
+              ) : null}
+            </Route>
+            <Route exact path="/destinations/:id/resorts">
+              <DestinationResorts match={match} />
+            </Route>
+            <Route exact path="/destinations/:id/photos">
+              <DestinationPhotos match={match} />
+            </Route>
+            <Route exact path="/destinations/:id/reviews">
+              <DestinationReviews match={match} />
+            </Route>
+            <Route exact path="/destinations/:id/flights">
+              <DestinationFlights />
+            </Route>
+          </Switch>
+        </div>
+      )}
+    </Transition>
   );
 }
 
