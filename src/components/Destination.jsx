@@ -16,7 +16,7 @@ class DestinationParent extends React.Component {
     destinationDescription: "click on the destination points to learn more"
   };
 
-  getInfo = async (value) => {
+  getInfo = async (value, image) => {
     this.setState({ bool: false });
     try {
       const response = await fetch(`${backendUrl}/api/destinations/` + value);
@@ -28,8 +28,12 @@ class DestinationParent extends React.Component {
         buttonTitle: "Explore " + data.title,
         island: data.island,
         open_weather_id: data.open_weather_location_id,
+        bg_img: data.bg_img,
         bool: true
       });
+      document.querySelector(
+        ".map"
+      ).style.backgroundImage = `url("${this.state.bg_img}")`;
       //console.log(this.island);
     } catch (e) {
       console.log(e);
@@ -41,7 +45,11 @@ class DestinationParent extends React.Component {
         {(state) => (
           <div
             className="destination-bio"
-            style={{ ...defaultStyle, ...transitionStyles[state] }}
+            style={{
+              ...defaultStyle,
+              ...transitionStyles[state]
+              // backgroundImage: `url(${this.state.bg_img})`
+            }}
           >
             <h1 className="map-title">
               {this.state.destinationTitle.toUpperCase()}
