@@ -41,7 +41,7 @@ function DestinationInfo(props) {
               <h5>{currentWeather.description}</h5>
               <h1>{currentWeather.temp}°C</h1>
             </div>
-            <div>
+            <div className="forecast-wrapper">
               <h4>WEEKLY FORECAST</h4>
               <ul className="forecast-list">{forecast}</ul>
             </div>

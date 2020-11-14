@@ -197,6 +197,11 @@ section {
   width: 50px;
 }
 
+.weather-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
 .forecast-list {
   display: flex;
   flex-wrap: wrap;
