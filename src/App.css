@@ -15,6 +15,7 @@ body {
 
 p {
   line-height: 2em;
+  font-weight: 300;
 }
 
 h1,
@@ -297,11 +298,12 @@ section {
   grid-column: 2;
   width: fit-content;
   height: fit-content;
-  /* margin: 0 auto; */
+
   grid-row: 4;
   color: #940000;
   transition: all ease 0.3s;
   z-index: 3;
+  padding: 30px 0;
 }
 
 .destination-bio a:hover {
@@ -649,11 +651,16 @@ input {
   width: 50%;
   max-width: 600px;
   margin: 60px auto;
+  font-weight: 500;
 }
 
 .nav-tabs li {
   color: rgb(110, 0, 0);
   transition: all ease 0.3s;
+}
+
+.nav-tabs a:active li {
+  font-weight: bold;
 }
 
 .nav-tabs li:hover {
