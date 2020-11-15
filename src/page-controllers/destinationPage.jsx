@@ -49,6 +49,9 @@ function DestinationPage({ match }) {
       getWeatherInfo(
         "https://community-open-weather-map.p.rapidapi.com/forecast/daily"
       );
+      document.querySelector(
+        ".destination-page"
+      ).style.backgroundImage = `url("${theDestination.bg_img}")`;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theDestination]);
