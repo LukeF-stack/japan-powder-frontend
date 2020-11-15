@@ -691,6 +691,8 @@ input {
   padding: 20px;
   box-shadow: 3px 4px 5px -1px rgba(0, 0, 0, 0.28);
   transition: all ease 0.3s;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .resort-li h5 {
