@@ -568,7 +568,8 @@ input {
   background-color: #fffffd;
   background-size: cover;
   background-position: center;
-  transition: all ease 0.3s;
+  transition: all ease 0.5s;
+  background-image: none;
 }
 
 .hero-parallax-wrapper-slow {
@@ -652,6 +653,7 @@ input {
   padding: 0;
   width: 50%;
   max-width: 600px;
+  min-width: 300px;
   margin: 60px auto;
   font-weight: 500;
 }
