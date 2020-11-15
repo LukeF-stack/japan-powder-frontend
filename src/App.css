@@ -235,7 +235,7 @@ section {
 }
 
 .forecast-list li {
-  min-width: 130px;
+  min-width: 120px;
   /* min-height: 150px; */
   /* margin: auto; */
 }

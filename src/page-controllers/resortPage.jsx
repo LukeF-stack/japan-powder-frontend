@@ -124,19 +124,21 @@ function ResortPage({ match }) {
             const imageUrl = `http://openweathermap.org/img/wn/${forecast.icon}@2x.png`;
             savedForecast.push(
               <li key={forecast.index}>
-                <p>
-                  <strong>{forecast.date}</strong>
-                </p>
-                <img
-                  src={imageUrl}
-                  alt={forecast.main}
-                  className="weather-icon"
-                />
-                {/* <h6>{forecast.main}</h6> */}
+                <div className="forecast-item">
+                  <p>
+                    <strong>{forecast.date}</strong>
+                  </p>
+                  <img
+                    src={imageUrl}
+                    alt={forecast.main}
+                    className="weather-icon"
+                  />
+                  {/* <h6>{forecast.main}</h6> */}
 
-                <h6>
-                  {forecast.temp_min} - {forecast.temp_max}°C
-                </h6>
+                  <h6>
+                    {forecast.temp_min} - {forecast.temp_max}°C
+                  </h6>
+                </div>
               </li>
             );
           });
