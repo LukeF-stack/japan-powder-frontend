@@ -192,6 +192,7 @@ section {
 
 .weather {
   margin: 40px 20px;
+  text-align: center;
 }
 
 .weather h4 {
@@ -205,12 +206,12 @@ section {
 
 .weather-grid {
   display: grid;
-  grid-template-columns: 2fr 3fr;
-  padding: 0 50px;
+  grid-template-columns: 3fr 6fr;
+  /* padding: 0 50px; */
   box-shadow: 0px 0px 14px 0px rgba(41, 41, 41, 0.1);
   background-color: #fffffde8;
   border-radius: 5px;
-  margin-top: 50px;
+  margin: 50px 0;
 }
 
 .forecast-list {
@@ -228,11 +229,12 @@ section {
   width: 1px;
   display: inline-block;
   background-color: #b8b8b8;
-  margin-right: 30px;
 }
 
 .forecast-item {
   display: inline-block;
+  margin: 0 30px;
+  text-align: center;
 }
 
 .forecast-list li {
@@ -882,5 +884,14 @@ input {
     margin: auto;
     right: 0;
     bottom: 47vmin;
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  .weather-grid {
+    grid-template-columns: 1fr;
+  }
+  .forecast-wrapper {
+    padding: 80px;
   }
 }
