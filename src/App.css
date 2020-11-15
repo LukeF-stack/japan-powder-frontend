@@ -570,7 +570,7 @@ input {
   overflow: hidden;
   width: 100%;
   display: grid;
-  /* grid-template-rows: 60px auto 2fr; */
+  grid-template-rows: 60px auto 2fr;
   grid-template-columns: 23% 1fr 23%;
   height: 70%;
 }
@@ -598,24 +598,33 @@ input {
   grid-column: 2;
   margin: auto;
   margin-left: 10vw;
-
+  margin-top: 5%;
   z-index: 1;
 }
 
-.explore-div img:hover {
-  transform: translateY(20px);
-}
-
-.explore-div img {
-  width: 1vw;
-  height: 2vh;
-  margin: auto;
+.explore-div a {
   display: block;
+  width: fit-content;
+  margin: auto;
+  padding: 0 40px;
   transition: all ease 0.3s;
 }
 
+.explore-div a:hover {
+  padding-top: 25px;
+}
+
+.explore-div img {
+  width: 1.23vw;
+  height: 2.5vh;
+  margin: auto;
+  display: block;
+  transition: all ease 0.3s;
+  min-width: 30px;
+}
+
 .explore-div h6 {
-  font-weight: 600;
+  font-weight: 700;
   color: #940000;
 }
 
