@@ -10,9 +10,9 @@ function ParticlesBox() {
           particles: {
             line_linked: { enable: false },
             number: {
-              value: 160,
+              value: 260,
               density: {
-                enable: false
+                enable: true
               }
             },
             size: {
@@ -28,6 +28,25 @@ function ParticlesBox() {
               anim: {
                 enable: false,
                 opacity_min: 0.5
+              }
+            }
+          },
+          interactivity: {
+            events: {
+              onhover: {
+                enable: true,
+                mode: "bubble"
+              }
+            },
+            modes: {
+              bubble: {
+                distance: 300,
+                size: 5,
+                duration: 3
+              },
+              repulse: {
+                distance: 90,
+                duration: 5
               }
             }
           }

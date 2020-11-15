@@ -207,17 +207,40 @@ section {
   flex-wrap: wrap;
   width: 100%;
   padding: 0;
-  margin: 50px 0;
+  /* margin: 50px 0; */
   justify-content: space-around;
+}
+
+.forecast-list li::before {
+  content: "";
+  height: 100px;
+  width: 1px;
+  display: inline-block;
+  background-color: #474747;
+  margin: 0 30px;
+}
+
+.forecast-item {
+  display: inline-block;
 }
 
 .forecast-list li {
   min-width: 150px;
+  min-height: 150px;
   margin: auto;
 }
 
 .forecast-list p {
   font-size: 10px;
+}
+
+.forecast-wrapper {
+  margin: auto;
+}
+
+.forecast-wrapper h4 {
+  margin: 50px auto;
+  font-weight: 600;
 }
 
 .map-title {
