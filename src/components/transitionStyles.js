@@ -1,5 +1,5 @@
 export const defaultStyle = {
-  transition: `opacity 0.5s ease-in-out`,
+  transition: `opacity 0.5s ease-in-out, padding 0.3s ease`,
   opacity: 0
 };
 

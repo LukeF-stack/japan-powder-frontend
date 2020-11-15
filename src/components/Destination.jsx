@@ -50,7 +50,7 @@ class DestinationParent extends React.Component {
         //   ...transitionStyles[state]
         // }}
       >
-        <Transition timeout={200} in={this.state.bool}>
+        <Transition timeout={300} in={this.state.bool}>
           {(state) => (
             <h1
               className="map-title"
@@ -63,7 +63,7 @@ class DestinationParent extends React.Component {
             </h1>
           )}
         </Transition>
-        <Transition timeout={200} in={this.state.bool}>
+        <Transition timeout={300} in={this.state.bool}>
           {(state) => (
             <p
               style={{
@@ -75,7 +75,7 @@ class DestinationParent extends React.Component {
             </p>
           )}
         </Transition>
-        <Transition timeout={200} in={this.state.bool}>
+        <Transition timeout={300} in={this.state.bool}>
           {(state) => (
             <Link
               to={`/destinations/${this.state.destinationId}/info`}
@@ -90,7 +90,7 @@ class DestinationParent extends React.Component {
             </Link>
           )}
         </Transition>
-        <Transition timeout={200} in={this.state.bool}>
+        <Transition timeout={300} in={this.state.bool}>
           {(state) => (
             <h6
               className="island-description"
