@@ -126,8 +126,6 @@ function DestinationPage({ match }) {
             forecast["temp_max"] = convertTemp(day.temp.max);
             forecast["index"] = forecastIndex;
             forecastIndex += 1;
-            // savedForecast["temp_min"] = day.temp.min;
-            // savedForecast["temp_max"] = day.temp.max;
             day.weather.forEach((result) => {
               forecast["id"] = result.id;
               forecast["main"] = result.main;
@@ -145,8 +143,8 @@ function DestinationPage({ match }) {
                   alt={forecast.main}
                   className="weather-icon"
                 />
-                <h6>{forecast.main}</h6>
-                <p>{forecast.description}</p>
+                {/* <h6>{forecast.main}</h6> */}
+
                 <h6>
                   {forecast.temp_min} - {forecast.temp_max}°C
                 </h6>
