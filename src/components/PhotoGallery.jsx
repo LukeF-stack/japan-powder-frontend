@@ -82,7 +82,7 @@ function PhotoGallery(props) {
       </div>
       {isShown ? (
         <div
-          className="gallery-modal"
+          className="modal-close"
           onClick={(e) => {
             //console.log(e.target.children);
             document
@@ -91,8 +91,21 @@ function PhotoGallery(props) {
             setShown(false);
           }}
         >
-          <div className="modal-close"> &#10799;</div>
+          {" "}
+          &#10799;
         </div>
+      ) : null}
+      {isShown ? (
+        <div
+          className="gallery-modal"
+          onClick={(e) => {
+            //console.log(e.target.children);
+            document
+              .querySelector(`.${props.selector}-page`)
+              .classList.remove("photo-view");
+            setShown(false);
+          }}
+        ></div>
       ) : null}
 
       {isShown ? (

@@ -119,7 +119,7 @@ section {
   bottom: 0;
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgba(14, 14, 14, 0.836);
   z-index: 10;
 }
@@ -147,7 +147,8 @@ section {
   line-height: 1em;
   /* float: right; */
   right: 0;
-  margin: 0 2vw;
+  top: 2vh;
+  margin: 2vw 20px;
   color: white;
   z-index: 20;
   transition: all ease 0.3s;
