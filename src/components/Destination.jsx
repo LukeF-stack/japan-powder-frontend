@@ -31,9 +31,14 @@ class DestinationParent extends React.Component {
         bg_img: data.bg_img,
         bool: true
       });
-      document.querySelector(
-        ".map"
-      ).style.backgroundImage = `url("${this.state.bg_img}")`;
+      document.querySelector(".map").style.opacity = 0.7;
+      setTimeout(() => {
+        document.querySelector(
+          ".map"
+        ).style.backgroundImage = `url("${this.state.bg_img}")`;
+        document.querySelector(".map").style.opacity = 1;
+      }, 500);
+
       //console.log(this.island);
     } catch (e) {
       console.log(e);
@@ -50,7 +55,7 @@ class DestinationParent extends React.Component {
         //   ...transitionStyles[state]
         // }}
       >
-        <Transition timeout={300} in={this.state.bool}>
+        <Transition timeout={500} in={this.state.bool}>
           {(state) => (
             <h1
               className="map-title"
@@ -63,7 +68,7 @@ class DestinationParent extends React.Component {
             </h1>
           )}
         </Transition>
-        <Transition timeout={300} in={this.state.bool}>
+        <Transition timeout={500} in={this.state.bool}>
           {(state) => (
             <p
               style={{
@@ -75,7 +80,7 @@ class DestinationParent extends React.Component {
             </p>
           )}
         </Transition>
-        <Transition timeout={300} in={this.state.bool}>
+        <Transition timeout={500} in={this.state.bool}>
           {(state) => (
             <Link
               to={`/destinations/${this.state.destinationId}/info`}
@@ -121,7 +126,7 @@ class DestinationParent extends React.Component {
             </div>
           </div>
         </div>
-        <Transition timeout={300} in={this.state.bool}>
+        <Transition timeout={500} in={this.state.bool}>
           {(state) => (
             <h6
               className="island-description"

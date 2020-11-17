@@ -204,6 +204,10 @@ section {
 
 .weather-icon {
   width: 50px;
+  filter: drop-shadow(5px 5px 5px rgba(41, 41, 41, 0.205));
+}
+.weather img {
+  filter: drop-shadow(5px 5px 5px rgba(41, 41, 41, 0.205));
 }
 
 .weather-grid {

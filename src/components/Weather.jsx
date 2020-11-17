@@ -7,9 +7,7 @@ function Weather(props) {
     <div className="weather-grid">
       <div className="weather">
         <h4>CURRENT WEATHER</h4>
-        <h3>
-          <strong>{currentWeather.main}</strong>
-        </h3>
+        <h3>{currentWeather.main}</h3>
         <img
           src={`http://openweathermap.org/img/wn/${currentWeather.icon}@2x.png`}
           alt={currentWeather.main}
