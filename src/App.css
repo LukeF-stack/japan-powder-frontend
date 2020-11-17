@@ -105,7 +105,7 @@ section {
   right: 0;
   left: 0;
   display: flex;
-  width: fit-content;
+  /* width: fit-content; */
   height: fit-content;
   z-index: 12;
 }
@@ -124,7 +124,7 @@ section {
 }
 
 .modal_arrow {
-  margin: 0 60px;
+  margin: auto;
   display: flex;
   width: 30px;
   padding: 3px;
