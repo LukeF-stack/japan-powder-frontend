@@ -37,6 +37,7 @@
   --accent-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500&family=Mulish:wght@200;300;400;500;600;800;900&display=swap");
 *,
 :after,
 :before {
