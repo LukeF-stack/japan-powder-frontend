@@ -119,7 +119,7 @@ section {
   bottom: 0;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: rgba(14, 14, 14, 0.836);
   z-index: 10;
 }
