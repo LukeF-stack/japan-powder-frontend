@@ -999,4 +999,7 @@ input {
     text-align: center;
     padding-top: 15vh;
   }
+  .explore-div {
+    margin-top: 80%;
+  }
 }
