@@ -37,24 +37,16 @@
   --accent-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500&family=Mulish:wght@200;300;400;500;600;800;900&display=swap");
+
 *,
 :after,
 :before {
   box-sizing: border-box;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Mulish", sans-serif !important;
-}
 html {
-  /* font-family: -apple-system, BlinkMacSystemFont, Avenir, Avenir Next, Segoe UI,
+  font-family: -apple-system, BlinkMacSystemFont, Avenir, Avenir Next, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-    sans-serif; */
+    sans-serif;
   font-size: 15px;
   line-height: 1.6;
   font-weight: 400;
