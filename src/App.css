@@ -191,7 +191,7 @@ section {
 }
 
 .weather {
-  margin: 40px 20px;
+  margin: 30px 20px;
   text-align: center;
 }
 
@@ -207,7 +207,7 @@ section {
 .weather-grid {
   display: grid;
   grid-template-columns: 3fr 6fr;
-  /* padding: 0 50px; */
+  padding: 0 0 30px 0;
   box-shadow: 0px 0px 14px 0px rgba(41, 41, 41, 0.1);
   background-color: #fffffde8;
   border-radius: 5px;
@@ -248,7 +248,7 @@ section {
 }
 
 .forecast-wrapper {
-  margin: auto;
+  margin: 30px auto;
 }
 
 .forecast-wrapper h4 {
@@ -267,7 +267,7 @@ section {
 .destination-page {
   display: grid;
   min-height: 100vh;
-  grid-template-rows: 1fr 0.5fr 4fr;
+  grid-template-rows: auto auto 4fr;
   background-position: center;
   background-size: cover;
 }
@@ -718,6 +718,8 @@ input {
   width: 70%;
   max-width: 1000px;
   margin: 20px auto;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .notification-container {
@@ -761,6 +763,7 @@ input {
   display: flex;
   margin: 40px auto;
   /* padding: 20px; */
+  min-width: 80vmin;
 }
 
 .reviews-wrapper ul {
@@ -802,8 +805,9 @@ input {
 
 .review-result-li {
   flex-grow: 1;
-  width: 300px;
+  max-width: 300px;
   margin: 20px;
+  min-width: 200px;
 }
 
 /* @media only screen and (min-width: 1280px) {

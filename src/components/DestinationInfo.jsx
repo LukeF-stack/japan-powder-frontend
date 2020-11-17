@@ -8,7 +8,7 @@ import {
 import Weather from "./Weather";
 
 function DestinationInfo(props) {
-  const { description, island, currentWeather, forecast } = props;
+  const { description, /*island,*/ currentWeather, forecast } = props;
 
   const [inProp, setInProp] = useState(false);
 
@@ -26,9 +26,9 @@ function DestinationInfo(props) {
           style={{ ...defaultStyle, ...transitionStyles[state] }}
         >
           <p>{description}</p>
-          <h6>
+          {/* <h6>
             <strong>{island}</strong>
-          </h6>
+          </h6> */}
           <Weather currentWeather={currentWeather} forecast={forecast} />
         </div>
       )}
