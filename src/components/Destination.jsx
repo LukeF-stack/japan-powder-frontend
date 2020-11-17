@@ -90,19 +90,7 @@ class DestinationParent extends React.Component {
             </Link>
           )}
         </Transition>
-        <Transition timeout={300} in={this.state.bool}>
-          {(state) => (
-            <h6
-              className="island-description"
-              style={{
-                ...defaultStyle,
-                ...transitionStyles[state]
-              }}
-            >
-              <strong>{this.state.island}</strong>
-            </h6>
-          )}
-        </Transition>
+
         <div className="map-buttons">
           <div className="map-img">
             <img src="/images/japan_islands.svg" alt="map of japan" />
@@ -133,6 +121,19 @@ class DestinationParent extends React.Component {
             </div>
           </div>
         </div>
+        <Transition timeout={300} in={this.state.bool}>
+          {(state) => (
+            <h6
+              className="island-description"
+              style={{
+                ...defaultStyle,
+                ...transitionStyles[state]
+              }}
+            >
+              <strong>{this.state.island}</strong>
+            </h6>
+          )}
+        </Transition>
       </div>
       //   )}
       // </Transition>

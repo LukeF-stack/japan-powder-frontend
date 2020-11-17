@@ -871,6 +871,13 @@ input {
     min-width: unset;
     width: 100%;
   } */
+  .map {
+    height: fit-content;
+    min-height: 100vh;
+  }
+  .map-title {
+    font-size: 24px;
+  }
   .map-btn-wrapper {
     min-width: unset;
     width: 100%;
@@ -977,5 +984,19 @@ input {
   }
   .forecast-wrapper {
     padding: 80px;
+  }
+  .homePage-map {
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .destination-bio {
+    height: fit-content;
+    display: block;
+  }
+  .map-title {
+    text-align: center;
+    padding-top: 15vh;
   }
 }
