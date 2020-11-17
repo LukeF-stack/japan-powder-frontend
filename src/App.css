@@ -150,7 +150,7 @@ section {
   top: 2vh;
   margin: 2vw 20px;
   color: white;
-  z-index: 20;
+  z-index: 30;
   transition: all ease 0.3s;
   cursor: pointer;
 }
