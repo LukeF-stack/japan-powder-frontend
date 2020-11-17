@@ -43,9 +43,9 @@
   box-sizing: border-box;
 }
 html {
-  font-family: -apple-system, BlinkMacSystemFont, Avenir, Avenir Next, Segoe UI,
+  /* font-family: -apple-system, BlinkMacSystemFont, Avenir, Avenir Next, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-    sans-serif;
+    sans-serif; */
   font-size: 15px;
   line-height: 1.6;
   font-weight: 400;
