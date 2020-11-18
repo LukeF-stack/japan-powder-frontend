@@ -16,10 +16,20 @@ function Nav() {
         </Link>
       </div>
       <ul className={`nav-links visibility-${shown}`}>
-        <Link to="/">
+        <Link
+          to="/"
+          onClick={() => {
+            setShown(false);
+          }}
+        >
           <li>Home</li>
         </Link>
-        <Link to="/destinations">
+        <Link
+          to="/destinations"
+          onClick={() => {
+            setShown(false);
+          }}
+        >
           <li>Destinations</li>
         </Link>
         {/* <Link to="/about">
@@ -29,17 +39,32 @@ function Nav() {
           <li>Contact</li>
         </Link> */}
         {!user.authenticated ? (
-          <Link to="/signup">
+          <Link
+            to="/signup"
+            onClick={() => {
+              setShown(false);
+            }}
+          >
             <li>Sign Up</li>
           </Link>
         ) : null}
         {!user.authenticated ? (
-          <Link to="/signin">
+          <Link
+            to="/signin"
+            onClick={() => {
+              setShown(false);
+            }}
+          >
             <li>Sign In</li>
           </Link>
         ) : null}
         {user.authenticated ? (
-          <Link to="/account">
+          <Link
+            to="/account"
+            onClick={() => {
+              setShown(false);
+            }}
+          >
             <li>Account</li>
           </Link>
         ) : null}
@@ -50,9 +75,9 @@ function Nav() {
           setShown((shown) => !shown);
         }}
       >
-        <div className="burger-line line-1"></div>
-        <div className="burger-line line-2"></div>
-        <div className="burger-line line-3"></div>
+        <div className={`burger-line line-1 line-${shown}`}></div>
+        <div className={`burger-line line-2 line-${shown}`}></div>
+        <div className={`burger-line line-3 line-${shown}`}></div>
       </div>
     </nav>
   );
