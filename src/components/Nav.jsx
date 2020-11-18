@@ -20,6 +20,7 @@ function Nav() {
           to="/"
           onClick={() => {
             setShown(false);
+            document.querySelector("body").classList.remove(`fixed-true`);
           }}
         >
           <li>Home</li>
@@ -28,6 +29,7 @@ function Nav() {
           to="/destinations"
           onClick={() => {
             setShown(false);
+            document.querySelector("body").classList.remove(`fixed-true`);
           }}
         >
           <li>Destinations</li>
@@ -43,6 +45,7 @@ function Nav() {
             to="/signup"
             onClick={() => {
               setShown(false);
+              document.querySelector("body").classList.remove(`fixed-true`);
             }}
           >
             <li>Sign Up</li>
@@ -53,6 +56,7 @@ function Nav() {
             to="/signin"
             onClick={() => {
               setShown(false);
+              document.querySelector("body").classList.remove(`fixed-true`);
             }}
           >
             <li>Sign In</li>
@@ -63,6 +67,7 @@ function Nav() {
             to="/account"
             onClick={() => {
               setShown(false);
+              document.querySelector("body").classList.remove(`fixed-true`);
             }}
           >
             <li>Account</li>
@@ -73,6 +78,7 @@ function Nav() {
         className="burger"
         onClick={() => {
           setShown((shown) => !shown);
+          document.querySelector("body").classList.toggle(`fixed-true`);
         }}
       >
         <div className={`burger-line line-1 line-${shown}`}></div>

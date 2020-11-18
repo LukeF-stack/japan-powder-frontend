@@ -7,6 +7,13 @@
   scroll-behavior: smooth;
 }
 
+body.fixed-true {
+  position: absolute;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
 body {
   font-family: "Inter", sans-serif !important;
   font-weight: 300;
@@ -84,7 +91,7 @@ section {
 
 .tsparticles-canvas-el {
   width: 100%;
-  height: 100%;
+  height: 100vh !important;
   position: absolute;
   top: 0;
   filter: blur(0.5px);
