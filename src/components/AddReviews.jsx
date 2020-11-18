@@ -7,14 +7,11 @@ import Reviews from "./Reviews.jsx";
 import { backendUrl } from "./App.jsx";
 
 function AddReviews(props) {
-  const { id } = props;
+  const { id, selector } = props;
   const { user } = useContext(UserContext);
   const [review, setReview] = useState({});
   const [isShown, setShown] = useState(false);
   const [state, setState] = useState({});
-  // useEffect(() => {
-  //   setShown(shown);
-  // }, [shown]);
 
   const createReview = async () => {
     //console.log("signupPage got", review);
@@ -99,7 +96,7 @@ function AddReviews(props) {
           {isShown ? <>cancel &ensp; &#10005;</> : <>add a review</>}
         </button>
       ) : null}
-      <Reviews id={id} state={state} />
+      <Reviews id={id} state={state} selector={selector} />
     </div>
   );
 }

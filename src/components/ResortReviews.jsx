@@ -26,7 +26,7 @@ function ResortReviews(props) {
           style={{ ...defaultStyle, ...transitionStyles[state] }}
         >
           <h1 className="section-title">Reviews</h1>
-          <AddReviews id={match.params.id} />
+          <AddReviews id={match.params.id} selector="resort" />
         </div>
       )}
     </Transition>

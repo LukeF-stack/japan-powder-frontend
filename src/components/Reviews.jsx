@@ -6,7 +6,7 @@ import { backendUrl } from "./App.jsx";
 
 function Reviews(props) {
   const { user } = useContext(UserContext);
-  const { id, state } = props;
+  const { id, state, selector } = props;
   const [refresh, setRefresh] = useState({});
   const [editedReview, setEditedReview] = useState(null);
   const [editedMessage, setEditedMessage] = useState({});
@@ -137,6 +137,9 @@ function Reviews(props) {
                   onClick={() => {
                     setEdit(review._id);
                     setEditedReview(review);
+                    document
+                      .querySelector(`.${selector}-page`)
+                      .classList.add("photo-view");
                   }}
                 >
                   edit
@@ -192,6 +195,9 @@ function Reviews(props) {
               <button
                 onClick={() => {
                   setEditedReview(null);
+                  document
+                    .querySelector(`.${selector}-page`)
+                    .classList.remove("photo-view");
                 }}
               >
                 cancel

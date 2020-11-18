@@ -30,7 +30,7 @@ function DestinationReviews(props) {
             <h3 className="section-title">Reviews</h3>
           </div>
 
-          <AddReviews id={match.params.id} />
+          <AddReviews id={match.params.id} selector="destination" />
         </div>
       )}
     </Transition>
