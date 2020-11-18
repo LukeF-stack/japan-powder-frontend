@@ -516,6 +516,7 @@ input {
   z-index: 3;
   background-position: center;
   grid-column: span 3;
+  filter: drop-shadow(6px 6px 10px #fffffc);
 }
 
 .react-parallax-bgimage {
