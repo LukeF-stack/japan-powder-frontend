@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 import { UserContext } from "./UserContext";
@@ -6,6 +6,8 @@ import { UserContext } from "./UserContext";
 
 function Nav() {
   const { user } = useContext(UserContext);
+  const [shown, setShown] = useState(false);
+
   return (
     <nav>
       <div id="logo">
@@ -13,7 +15,7 @@ function Nav() {
           <img src="/images/powder_logo.svg" alt="Powder Japan Logo" />
         </Link>
       </div>
-      <ul className="nav-links">
+      <ul className={`nav-links visibility-${shown}`}>
         <Link to="/">
           <li>Home</li>
         </Link>
@@ -42,6 +44,16 @@ function Nav() {
           </Link>
         ) : null}
       </ul>
+      <div
+        className="burger"
+        onClick={() => {
+          setShown((shown) => !shown);
+        }}
+      >
+        <div className="burger-line line-1"></div>
+        <div className="burger-line line-2"></div>
+        <div className="burger-line line-3"></div>
+      </div>
     </nav>
   );
 }
