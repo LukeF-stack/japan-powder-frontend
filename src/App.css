@@ -155,7 +155,7 @@ section {
   /* float: right; */
   right: 0;
   top: 2vh;
-  margin: 2vw 20px;
+  margin: 0px 2vmax;
   color: white;
   z-index: 30;
   transition: all ease 0.3s;
@@ -170,6 +170,8 @@ section {
   margin: auto;
   display: block;
   width: 60vw;
+  max-height: 80vh;
+  object-fit: contain;
 }
 
 .photo-grid {
