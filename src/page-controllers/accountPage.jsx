@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import "../App.css";
 import { UserContext } from "../components/UserContext";
 import SignOutBtn from "../components/SignOutBtn";
-import Favs from "../components/Favs";
+//import Favs from "../components/Favs";
 //import SetUserContext from "../components/User";
 import { Transition } from "react-transition-group";
 import {
@@ -30,7 +30,7 @@ function AccountPage() {
           {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
           <h2>{user.fullName}</h2>
           <h3>{user.email}</h3>
-          <Favs />
+          {/* <Favs /> */}
           <SignOutBtn />
         </div>
       )}
