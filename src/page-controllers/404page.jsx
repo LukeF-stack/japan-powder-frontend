@@ -6,6 +6,7 @@ import {
   transitionStyles
 } from "./../components/transitionStyles.js";
 import ParticlesBox from "./../components/Particles";
+import { Helmet } from "react-helmet";
 
 function ErrorPage() {
   const [inProp, setInProp] = useState(false);
@@ -20,6 +21,9 @@ function ErrorPage() {
     <Transition in={inProp} timeout={500}>
       {(state) => (
         <div style={{ ...defaultStyle, ...transitionStyles[state] }}>
+          <Helmet>
+            <title>404</title>
+          </Helmet>
           <div className="error-page">
             <div className="error-title-wrapper">
               <h2>SORRY...PAGE NOT FOUND</h2>

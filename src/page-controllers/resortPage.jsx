@@ -12,6 +12,7 @@ import {
   defaultStyle,
   transitionStyles
 } from "./../components/transitionStyles.js";
+import { Helmet } from "react-helmet";
 
 function ResortPage({ match }) {
   const [inProp, setInProp] = useState(false);
@@ -160,6 +161,11 @@ function ResortPage({ match }) {
         >
           {resort.title ? (
             <h1 className="page-title">{resort.title.toUpperCase()}</h1>
+          ) : null}
+          {resort.title ? (
+            <Helmet>
+              <title>{resort.title}</title>
+            </Helmet>
           ) : null}
           <ResortNavTabs match={match} />
           <Switch>

@@ -9,6 +9,7 @@ import DestinationReviews from "../components/DestinationReviews";
 import DestinationFlights from "../components/DestinationFlights";
 import { backendUrl } from "../components/App.jsx";
 import { Transition } from "react-transition-group";
+import { Helmet } from "react-helmet";
 
 function DestinationPage({ match }) {
   const [weather, setWeather] = useState({});
@@ -174,6 +175,11 @@ function DestinationPage({ match }) {
         >
           {theDestination !== null ? (
             <h1 className="page-title">{theDestination.title.toUpperCase()}</h1>
+          ) : null}
+          {theDestination !== null ? (
+            <Helmet>
+              <title>{theDestination.title}</title>
+            </Helmet>
           ) : null}
           <DestinationNavTabs match={match} />
           <Switch>

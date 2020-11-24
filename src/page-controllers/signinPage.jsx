@@ -11,6 +11,7 @@ import {
   defaultStyle,
   transitionStyles
 } from "./../components/transitionStyles.js";
+import { Helmet } from "react-helmet";
 
 class SignInPage extends React.Component {
   state = {
@@ -63,6 +64,9 @@ class SignInPage extends React.Component {
       <Transition in={this.state.inProp} timeout={500}>
         {(state) => (
           <div style={{ ...defaultStyle, ...transitionStyles[state] }}>
+            <Helmet>
+              <title>Sign In</title>
+            </Helmet>
             <SignInForm onSignIn={(fields) => this.onSignIn(fields)} />
             <div>{this.setUser}</div>
           </div>

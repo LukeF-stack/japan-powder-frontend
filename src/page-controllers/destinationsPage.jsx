@@ -6,6 +6,7 @@ import {
   defaultStyle,
   transitionStyles
 } from "./../components/transitionStyles.js";
+import { Helmet } from "react-helmet";
 
 function DestinationsPage() {
   const [inProp, setInProp] = useState(false);
@@ -20,6 +21,9 @@ function DestinationsPage() {
     <Transition in={inProp} timeout={500}>
       {(state) => (
         <div style={{ ...defaultStyle, ...transitionStyles[state] }}>
+          <Helmet>
+            <title>Destinations</title>
+          </Helmet>
           <Map />
         </div>
       )}

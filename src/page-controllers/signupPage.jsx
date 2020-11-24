@@ -8,6 +8,7 @@ import {
   defaultStyle,
   transitionStyles
 } from "./../components/transitionStyles.js";
+import { Helmet } from "react-helmet";
 
 class SignUpPage extends React.Component {
   state = {
@@ -49,6 +50,9 @@ class SignUpPage extends React.Component {
       <Transition in={this.state.inProp} timeout={500}>
         {(state) => (
           <div style={{ ...defaultStyle, ...transitionStyles[state] }}>
+            <Helmet>
+              <title>Sign Up</title>
+            </Helmet>
             <SignUpForm onSignUp={(fields) => this.onSignUp(fields)} />
           </div>
         )}

@@ -7,6 +7,7 @@ import {
   defaultStyle,
   transitionStyles
 } from "./../components/transitionStyles.js";
+import { Helmet } from "react-helmet";
 
 function HomePage() {
   const [inProp, setInProp] = useState(false);
@@ -23,6 +24,9 @@ function HomePage() {
           className="home"
           style={{ ...defaultStyle, ...transitionStyles[state] }}
         >
+          <Helmet>
+            <title>Powder Japan</title>
+          </Helmet>
           <section>
             <HomePageHero />
           </section>

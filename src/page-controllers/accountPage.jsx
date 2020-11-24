@@ -9,6 +9,7 @@ import {
   defaultStyle,
   transitionStyles
 } from "./../components/transitionStyles.js";
+import { Helmet } from "react-helmet";
 
 function AccountPage() {
   const [inProp, setInProp] = useState(false);
@@ -22,6 +23,9 @@ function AccountPage() {
     <Transition in={inProp} timeout={500}>
       {(state) => (
         <div style={{ ...defaultStyle, ...transitionStyles[state] }}>
+          <Helmet>
+            <title>Account</title>
+          </Helmet>
           <h1 className="page-title">Account</h1>
           {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
           <h2>{user.fullName}</h2>
