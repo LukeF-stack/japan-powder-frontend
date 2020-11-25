@@ -69,20 +69,33 @@ function AccountPage() {
       {(state) => (
         <div
           style={{ ...defaultStyle, ...transitionStyles[state] }}
-          className="account-details"
+          className="account-page"
         >
-          <Helmet>
-            <title>Account</title>
-          </Helmet>
-          <h1 className="page-title">Account</h1>
-          {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
-          <h2>{user.fullName}</h2>
-          <h3>{user.email}</h3>
-          {/* <Favs /> */}
-          <div className="reviews-wrapper reviews-wrapper-account">
-            <ul>{reviewResults}</ul>
+          <div className="account-details">
+            <Helmet>
+              <title>Account</title>
+            </Helmet>
+            <h1 className="page-title title-account">ACCOUNT</h1>
+            {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
+            <div className="account-text">
+              <h3>
+                <strong>Name:</strong>
+              </h3>
+              <h3>{user.fullName}</h3>
+              <h3>
+                <strong>Email:</strong>
+              </h3>
+              <h3>{user.email}</h3>
+              <SignOutBtn />
+            </div>
+            {/* <Favs /> */}
+            <div className="your-reviews">
+              <h4>YOUR REVIEWS</h4>
+              <div className="reviews-wrapper reviews-wrapper-account">
+                <ul>{reviewResults}</ul>
+              </div>
+            </div>
           </div>
-          <SignOutBtn />
         </div>
       )}
     </Transition>

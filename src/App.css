@@ -20,6 +20,12 @@ body {
   font-size: 14px;
 }
 
+.App {
+  min-height: 100vh;
+  min-width: 100%;
+  position: absolute;
+}
+
 p {
   line-height: 2em;
   font-weight: 300;
@@ -834,6 +840,7 @@ input {
 
 .reviews-wrapper-account {
   width: 100%;
+  min-width: unset;
 }
 
 .reviews-wrapper ul {
@@ -882,15 +889,37 @@ input {
   min-width: 200px;
 }
 
-/* @media only screen and (min-width: 1280px) {
-  .destination-bio p {
-    font-size: 0.7vw;
-  }
-} */
-
 .account-details {
   width: 50%;
   margin: auto;
+  min-width: 80vmin;
+  background-color: #ffffffe3;
+  padding: 60px; /* height: 90vh; */
+  display: block;
+  border-radius: 8px;
+  box-shadow: 2px 5px 10px #00000040;
+}
+
+.account-page {
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/account_bg.png");
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+}
+
+.account-text {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.your-reviews {
+  margin-top: 50px;
+}
+
+.title-account {
+  margin: 0;
 }
 
 @media only screen and (max-width: 1536px) {
