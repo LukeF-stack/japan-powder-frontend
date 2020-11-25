@@ -939,6 +939,7 @@ input {
     display: -webkit-box;
     width: 60%;
     padding: 10px 0;
+    margin-left: 20%;
   }
   .destination-bio p {
     margin: 20px auto;
