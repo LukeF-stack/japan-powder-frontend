@@ -832,6 +832,10 @@ input {
   min-width: 80vmin;
 }
 
+.reviews-wrapper-account {
+  width: 100%;
+}
+
 .reviews-wrapper ul {
   display: flex;
   flex-wrap: wrap;
@@ -874,7 +878,7 @@ input {
 .review-result-li {
   flex-grow: 1;
   max-width: 300px;
-  margin: 20px;
+  margin: 10px;
   min-width: 200px;
 }
 
@@ -883,6 +887,11 @@ input {
     font-size: 0.7vw;
   }
 } */
+
+.account-details {
+  width: 50%;
+  margin: auto;
+}
 
 @media only screen and (max-width: 1536px) {
   .map-buttons {

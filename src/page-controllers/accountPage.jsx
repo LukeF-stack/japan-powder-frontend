@@ -67,7 +67,10 @@ function AccountPage() {
   return (
     <Transition in={inProp} timeout={500}>
       {(state) => (
-        <div style={{ ...defaultStyle, ...transitionStyles[state] }}>
+        <div
+          style={{ ...defaultStyle, ...transitionStyles[state] }}
+          className="account-details"
+        >
           <Helmet>
             <title>Account</title>
           </Helmet>
@@ -76,7 +79,7 @@ function AccountPage() {
           <h2>{user.fullName}</h2>
           <h3>{user.email}</h3>
           {/* <Favs /> */}
-          <div className="reviews-wrapper">
+          <div className="reviews-wrapper reviews-wrapper-account">
             <ul>{reviewResults}</ul>
           </div>
           <SignOutBtn />
