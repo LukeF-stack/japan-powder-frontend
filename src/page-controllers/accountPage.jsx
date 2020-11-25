@@ -10,10 +10,55 @@ import {
   transitionStyles
 } from "./../components/transitionStyles.js";
 import { Helmet } from "react-helmet";
+import { backendUrl } from "../components/App.jsx";
 
 function AccountPage() {
   const [inProp, setInProp] = useState(false);
   const { user } = useContext(UserContext);
+
+  const [reviewResults, setReviewResults] = useState([]);
+
+  useEffect(() => {
+    getReviews();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
+
+  const getReviews = async () => {
+    try {
+      const url = new URL(`${backendUrl}/api/reviews`);
+      const params = { User_id: user._id };
+
+      url.search = new URLSearchParams(params).toString();
+
+      const response = await fetch(url);
+      const results = await response.json();
+      //setDestination(destination);
+      //console.log(destination);
+      generateReviewsList(results);
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+  const generateReviewsList = (results) => {
+    const reviews = [];
+    results.forEach((review) => {
+      //console.log(review);
+      reviews.push(
+        <li key={review._id} className="review-result-li">
+          <div className="review-result">
+            <h4>{review.Name}</h4>
+            {review.Timestamp ? (
+              <h6>{new Date(review.Timestamp).toDateString()}</h6>
+            ) : null}
+            <p>{review.Body}</p>
+          </div>
+        </li>
+      );
+    });
+    setReviewResults(reviews.reverse());
+  };
+
   useEffect(() => {
     setTimeout(() => {
       setInProp(true);
@@ -31,6 +76,9 @@ function AccountPage() {
           <h2>{user.fullName}</h2>
           <h3>{user.email}</h3>
           {/* <Favs /> */}
+          <div className="reviews-wrapper">
+            <ul>{reviewResults}</ul>
+          </div>
           <SignOutBtn />
         </div>
       )}
