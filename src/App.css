@@ -326,13 +326,14 @@ section {
   color: white;
   transition: all ease 0.3s;
   z-index: 3;
-  padding: 12px;
+
   border-radius: 5px;
   background-color: #940000;
 }
 
 .destination-bio a h5 {
   margin: 0;
+  padding: 12px;
 }
 
 .destination-bio a:hover {
