@@ -326,7 +326,7 @@ section {
   color: white;
   transition: all ease 0.3s;
   z-index: 3;
-
+  display: block;
   border-radius: 5px;
   background-color: #940000;
 }
@@ -1058,9 +1058,7 @@ input {
     height: 180vh;
     /* grid-auto-rows: max-content; */
   }
-  .destination-bio a {
-    padding: 0;
-  }
+
   /* .map-buttons {
     grid-row: 5;
     padding: 40px 20px;
