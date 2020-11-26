@@ -340,11 +340,11 @@ section {
   padding-left: 30px;
 }
 
-#rusutsu {
+#niseko {
   top: 113px;
   left: 437px;
 }
-#niseko {
+#sapporo {
   top: 100px;
   left: 480px;
 }
@@ -1020,14 +1020,14 @@ input {
     right: 0;
     bottom: 0;
   }
-  #rusutsu {
+  #niseko {
     top: 0;
     left: 32vw;
     margin: auto;
     right: 0;
     bottom: 45vmin;
   }
-  #niseko {
+  #sapporo {
     top: 0;
     left: 39vw;
     margin: auto;

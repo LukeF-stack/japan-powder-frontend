@@ -114,13 +114,13 @@ class DestinationParent extends React.Component {
                 displayInfo={this.getInfo}
               />
               <DestinationChild
-                destination="Shiga Kogen"
-                destinationId="5f576091a066892294ead2de"
+                destination="Sapporo"
+                destinationId="5fbf46792d67e76990c2f7c1"
                 displayInfo={this.getInfo}
               />
               <DestinationChild
-                destination="Rusutsu"
-                destinationId="5f5761d6a066892294ead2df"
+                destination="Shiga Kogen"
+                destinationId="5f576091a066892294ead2de"
                 displayInfo={this.getInfo}
               />
             </div>
