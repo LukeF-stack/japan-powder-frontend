@@ -667,7 +667,7 @@ input {
   display: grid;
   grid-template-rows: 60px auto 2fr;
   grid-template-columns: 23% 1fr 23%;
-  height: 70%;
+  height: 80%;
 }
 
 /* .hero-parallax-wrapper-fast div {
@@ -693,7 +693,7 @@ input {
   grid-column: 2;
   margin: auto;
   margin-left: 10vw;
-  margin-top: 10%;
+  margin-top: 3vmax;
   z-index: 1;
 }
 
